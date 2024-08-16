@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<head>
+    <title>Peergos release v0.3.0</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="stylesheet" href="/theme/css/material-icons.css">
+    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
+    <script src="/theme/js/toggle.js" defer></script>
+    <script src="/theme/js/slider.js" defer></script>
+    <link rel="stylesheet" href="/theme/css/style.css">
+    <link rel="stylesheet" href="/theme/css/signup.css">
+    <link rel="stylesheet" href="/theme/css/slider.css">
+    <link rel="stylesheet" href="/theme/css/montserrat.css" type="text/css">
+    <link rel="stylesheet" href="/theme/vendor/materialize/css/materialize.min.css" type="text/css"/>
+    <link rel="stylesheet" href="/theme/css/peergos.css" type="text/css"/>
+
+    <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
+ </head>
+<body class="blog" style="overflow-y: scroll;">
+<nav>
+    <div class="nav-wrapper">
+
+
+        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                    <li >
+                        <a href="../features"
+>
+                            Features
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../pricing"
+>
+                            Pricing
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../security"
+>
+                            Security
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="../blog"
+>
+                            Blog
+                        </a>
+                    </li>
+                    <li >
+                        <a href="../about"
+>
+                            About
+                        </a>
+                    </li>
+                        <li>
+                            <a href="https://book.peergos.org" target="_new">
+                                                        <span>
+                                                               Tech 
+                                                        </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://peergos.net" target="_new" class="btn btn-blue">
+                                                        <span>
+                                                               LOG IN 
+                                                        </span>
+                            </a>
+                        </li>
+		        <li>
+                            <a href="https://peergos.net/?signup=true" target="_new" class="btn">
+                                                        <span>
+                                                               SIGN UP 
+                                                        </span>
+                            </a>
+                        </li>
+			
+
+            </ul>
+
+
+        <ul class="side-nav" id="mobile">
+            <li class="side-nav-header">
+                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+            </li>
+                <li >
+                    <a href="../features"
+>
+                        Features
+                    </a>
+                </li>
+                <li >
+                    <a href="../pricing"
+>
+                        Pricing
+                    </a>
+                </li>
+                <li >
+                    <a href="../security"
+>
+                        Security
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="../blog"
+>
+                        Blog
+                    </a>
+                </li>
+                <li >
+                    <a href="../about"
+>
+                        About
+                    </a>
+                </li>
+                    <li class="hidden-md hidden-lg nav_bar_grey_li">
+                        <a href="https://book.peergos.org" target="_new" class="nav_bar_grey_lnk">
+                            <span class="nav_bar_grey_span">
+                                Tech
+                            </span>
+                        </a>
+                    </li>
+                    <li class="hidden-md hidden-lg nav_bar_grey_li">
+                        <a href="https://peergos.net" target="_new" class="nav_bar_grey_lnk btn btn-blue">
+                            <span class="nav_bar_grey_span">
+                                LOG IN
+                            </span>
+                        </a>
+                    </li>
+                    <li class="hidden-md hidden-lg nav_bar_grey_li">
+                        <a href="https://peergos.net/?signup=true" target="_new" class="nav_bar_grey_lnk btn">
+                            <span class="nav_bar_grey_span">
+                                SIGN UP
+                            </span>
+                        </a>
+                    </li>
+        </ul>
+
+    </div>
+</nav>
+    <div class="container bs-docs-container">
+    <div class="row">
+    <div class="col m3 col s4">
+    </div>
+    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+    <h1 class="page-header main-title">Peergos release v0.3.0</h1>
+    <h3 class="main-title">Published: Mon 10 August 2020</h3>
+    <div class="bs-docs-section">
+    <p>Privacy is alive and well at Peergos as we continue on our mission to build the private web where you are in control of your data and identity.</p>
+<p>We are pleased to announce the release of <a href="https://peergos.net/public/peergos/releases">v0.3.0</a>, and it's a big one! You can try it out on <a href="https://peergos.net">peergos.net</a> now. This release patches a number of bugs in both the server and the client, and also brings a host of cool new features. There's too much to talk about in a single blog post, but we'll mention everything briefly before diving deep in later posts.</p>
+<p>Some of the highlights include:</p>
+<h3 id="performance-improvements">Performance improvements</h3>
+<ol>
+<li>S3 datastore - read and write directly to S3 from the browser without proxying through a Peergos server</li>
+<li>GC is now fully concurrent and doesn't have any "stop the world" pauses</li>
+<li>Smoother HD video streaming through a buffered async reader</li>
+</ol>
+<h3 id="client">Client</h3>
+<ol>
+<li>Improved sharing UX</li>
+<li>Saving a document in the text editor is now 7x faster</li>
+<li>Easily delete your account and all your data</li>
+</ol>
+<h3 id="server">Server</h3>
+<ol>
+<li>Privacy-respecting payments - self-host a Peergos server and charge for storage</li>
+<li>Easily install and run IPFS via a top-level command</li>
+<li>Expanded quota APIs</li>
+<li>Postgres is now supported as well as SQLite</li>
+</ol>
+<h3 id="protocol-upgrades">Protocol upgrades</h3>
+<ol>
+<li>Upgrade to IPFS v0.6.0 - see the release notes <a href="https://docs.ipfs.io/recent-releases/go-ipfs-0-6/#features">here</a>.</li>
+<li>Support base36 and base64 in multibase</li>
+<li>Limit identity multihashes to 36 bytes</li>
+</ol>
+<p>We are particularly proud of the direct S3 datastore as it allows a Peergos server to use S3 compatible storage for the blockstore. Clients can read and write directly to an S3 bucket after authorization from the Peergos server. This new feature makes the Peergos server much more scalable and reliable, and gets around the need for complicated access policies when using S3. We will be exploring this feature in more detail soon!</p>
+<p>Want to be part of the future? Create an account on <a href="https://peergos.net/?signup=true">https://peergos.net</a> or self-host your own <a href="https://github.com/Peergos/Peergos/blob/master/README.md#usage---self-hosting">private personal datastore</a>. </p>
+<h4>RECENT POSTS</h4>
+<ul id="recent-posts">
+    <li>
+      <a href="../posts/blake3">Reasons to prefer blake3 over sha256</a>
+    </li>
+    <li>
+      <a href="../posts/a-better-web">A better web</a>
+    </li>
+    <li>
+      <a href="../posts/markdown-browser">Markdown browser</a>
+    </li>
+    <li>
+      <a href="../posts/bats">Release the BATs (block level access control in IPFS)</a>
+    </li>
+    <li>
+      <a href="../posts/email-bridge">Encrypted email storage and client</a>
+    </li>
+    <li>
+      <a href="../posts/decentralized-chat">Decentralized encrypted chat</a>
+    </li>
+    <li>
+      <a href="../posts/decentralized-social-media">Peergos launches decentralized & encrypted social media</a>
+    </li>
+    <li>
+      <a href="../posts/social-profile">Private and customizable profiles</a>
+    </li>
+    <li>
+      <a href="../posts/p2p-web-hosting">Simple decentralized web hosting on Peergos</a>
+    </li>
+    <li>
+      <a href="../posts/calendar">Encrypted shareable calendar</a>
+    </li>
+    <li>
+      <a href="../posts/file-search">Fast Encrypted File Search</a>
+    </li>
+    <li>
+      <a href="../posts/private-kanban">Private Planning Boards in Peergos</a>
+    </li>
+    <li>
+      <a href="../posts/the-social-dilemma">How to solve the social dilemma and fix social media</a>
+    </li>
+    <li>
+      <a href="../posts/next-generation-internet">Peergos wins EU Next Generation Internet grant</a>
+    </li>
+    <li>
+      <a href="../posts/direct-s3">Direct S3 access</a>
+    </li>
+    <li>
+      <a href="../posts/release-v0.3.0">Peergos release v0.3.0</a>
+    </li>
+    <li>
+      <a href="../posts/keybase-left-building">Keybase has left the building</a>
+    </li>
+    <li>
+      <a href="../posts/perfect-social-network">The perfect social network</a>
+    </li>
+    <li>
+      <a href="../posts/atomic-access-control">Atomic access control</a>
+    </li>
+    <li>
+      <a href="../posts/release-v0.1.3">Peergos release v0.1.3</a>
+    </li>
+    <li>
+      <a href="../posts/applications">Applications on Peergos</a>
+    </li>
+    <li>
+      <a href="../posts/fast-seeking">Fast seeking and encrypted history</a>
+    </li>
+    <li>
+      <a href="../posts/ipfs-camp">IPFS Camp, new features</a>
+    </li>
+    <li>
+      <a href="../posts/alpha-release">Alpha Release</a>
+    </li>
+    <li>
+      <a href="../posts/security-audit">Security Audit</a>
+    </li>
+    <li>
+      <a href="../posts/dev-update">Development update</a>
+    </li>
+</ul>    </div>
+    <span class="pull-right">
+                                        <a class="btn btn-default" role="button"
+                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
+                                </span>
+
+    </div>
+    </div>
+    </div>
+    <div class="index">
+
+
+<footer class="page-footer">
+    <div class="">
+        <div class="row">
+            <div class="col l6 m6 s12 footer-logo">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+            </div>
+
+            <div class="col l3 m4 s12">
+                <h5 class="white-text">About Us</h5>
+                <ul>
+                    <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
+                    <li><a href="/about" >About</a></li>
+                    <li><a href="/contact" >Contact</a></li>
+                    <li><a href="/faq" >FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="col l3 m3 s12">
+                <h5 class="white-text">Community</h5>
+                <ul>
+                    <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
+                    <a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100">
+                    </a>
+                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100">
+                    </a>
+                    <a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100">
+                    </a>
+                    <a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100">
+                    </a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="row">
+                <div class="col s12">
+                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
+                    Maguire</a>.
+                </div>
+
+            </div>
+        </div>
+
+</footer>
+
+    </div>
+</div>
+<script src="/theme/vendor/jquery/dist/jquery.min.js"></script>
+<script src="/theme/vendor/materialize/js/materialize.min.js"></script>
+<script>
+    $(".button-collapse").sideNav();
+
+
+</script>
+
+</body>
+</html>

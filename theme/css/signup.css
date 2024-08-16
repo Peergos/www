@@ -1,0 +1,57 @@
+.button-group-container {
+	margin-block: 24px;
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+
+.block-tier-group {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 16px;
+}
+
+.block-tier {
+	background-color: #efefef;
+	padding: 24px;
+	border-radius: 8px;
+}
+
+.block-tier .title {
+	margin: 0;
+}
+
+.block-tier .value {
+	font-size: var(--title);
+	font-weight: var(--bold);
+}
+
+.block-tier button {
+	margin: 16px 0;
+	display: block;
+	background-color: var(--green-500);
+	color: var(--bg);
+	border: none;
+	width: 100%;
+	line-height: 32px;
+	padding: 6px 16px;
+	text-align: center;
+	font-size: var(--text);
+	font-family: var(--font-stack);
+	font-weight: var(--bold);
+	cursor: pointer;
+}
+
+.block-tier button:hover {
+}
+
+.block-tier ul {
+	padding: 0;
+	list-style-position: inside;
+	list-style-image: url("check.svg");
+}
+
+.billing {
+	font-size: var(--text-small);
+	text-transform: uppercase;
+}

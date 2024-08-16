@@ -1,0 +1,32 @@
+.priceslider {
+	display: flex;
+	align-items: center;
+	height: 36px;
+
+	border-radius: 36px;
+	background-color: #efefef;
+}
+
+.priceslider .entry {
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	border-radius: 36px;
+	height: 36px;
+	font-weight: var(--bold);
+	color: var(--gray-3);
+	cursor: pointer;
+}
+
+.entry:has(input:checked),
+.entry.active {
+	background-color: var(--green-500);
+	color: white;
+}
+
+input[type="radio"] {
+	height: 0;
+	width: 0;
+	visibility: hidden;
+	display: none;
+}
