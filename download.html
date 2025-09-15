@@ -152,8 +152,51 @@
     <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
     <h1 class="page-header main-title">Download</h1>
     <div class="bs-docs-section">
-    <h2 id="android-app">Android app</h2>
-<div style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
+    <style>
+details { cursor: pointer; }
+
+summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 2em;
+}
+
+summary::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    color: #3fdb9c;
+}
+
+details[open] summary::before {
+     content: '▼';
+    color: #3fdb9c;
+}
+
+details {
+    border: 1px solid #26b99a;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
+
+details::marker {
+  color: #26b99a;
+  font-size: 2rem;
+}
+</style>
+
+<details>
+<summary><h2>Android app</h2></summary>
+
+<div id="android" style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
 <div>
 <a href="https://play.google.com/store/apps/details?id=peergos.android"><img src="theme/img/download/Google-Play.jpg" alt="From Google Play" style="height:100px"/></a>
 </div>
@@ -164,20 +207,35 @@ or
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos.apk"><img src="theme/img/download/android-apk.webp" alt="Download APK" style="height:100px"/></a>
 </div>
 </div>
-<h2 id="desktop-apps">Desktop apps:</h2>
-<div>
+</details>
+
+<h2><b>Desktop apps</b></h2>
+
+<details>
+<summary><h2>Windows</h2></summary>
+
+<div id="windows">
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-windows-amd64.msi"><img src="theme/img/download/windows-11.png" alt="Windows 11" style="height:100px"/></a>
 </div>
+</details>
+
+<details>
+<summary><h2>MacOS</h2></summary>
 
 <div style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
-<div>
+<div id="macos">
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-macos-aarch64.pkg"><img src="theme/img/download/mac-osx.jpg" alt="MacOS, ARM CPU" style="height:150px"/></a>
 </div>
 <div>
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-macos-amd64.pkg"><img src="theme/img/download/mac-osx-intel.jpg" alt="MacOS, Intel CPU" style="height:150px"/></a>
 </div>
 </div>
+</details>
 
+<details>
+<summary><h2>Linux</h2></summary>
+
+<h3 id="linux">Ubuntu Linux</h3>
 <div style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
 <div style="padding:20px;">
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-ubuntu-amd64.deb"><img src="theme/img/download/ubuntu-intel.webp" alt="Ubuntu based, Intel CPU" style="height:100px"/></a>
@@ -187,6 +245,7 @@ or
 </div>
 </div>
 
+<h3>RPM-based Linux</h3>
 <div style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
 <div style="padding:20px;">
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-linux-amd64.rpm"><img src="theme/img/download/rpm-intel.webp" alt="RPM based, Intel CPU" style="height:100px"/></a>
@@ -196,9 +255,11 @@ or
 </div>
 </div>
 
+<h3>Debian Linux</h3>
 <div style="padding:20px;">
 <a href="https://github.com/Peergos/web-ui/releases/download/v1.11.0/peergos-1.10.0-debian-amd64.deb"><img src="theme/img/download/debian.webp" alt="Debian, Intel CPU" style="height:100px"/></a>
 </div>
+</details>
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
