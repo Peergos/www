@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updates>
+    <update>
+        <version>1.12.1</version>
+        <url>https://peergos.org/peergos-1.12.1-windows-amd64.msi</url>
+        <sha256>a765375c7fc36a74a3534c63d222698a54c2de6109ac1bfab9b9d3e4a83418dd</sha256>
+    </update>
+</updates>
