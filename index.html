@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Peergos</title>
     <meta name="description" content="Peergos is post-quantum end-to-end encrypted storage, sharing and sync. Your files, your metadata and who you share with stay private, even from us.">
     <link rel="canonical" href="https://peergos.org/">
@@ -16,18 +17,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
-    <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <script src="/theme/js/toggle.js" defer></script>
-    <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
-    <link rel="stylesheet" href="/theme/css/signup.css">
-    <link rel="stylesheet" href="/theme/css/slider.css">
     <link rel="stylesheet" href="/theme/css/montserrat.css" type="text/css">
     <link rel="stylesheet" href="/theme/vendor/materialize/css/materialize.min.css" type="text/css"/>
     <link rel="stylesheet" href="/theme/css/peergos.css" type="text/css"/>
@@ -39,8 +34,8 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
-        <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" height="57" alt="Peergos"/></a>
+        <a href="#" data-activates="mobile" class="button-collapse" aria-label="Menu"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></a>
             <ul class="right hide-on-med-and-down">
                     <li >
                         <a href="./download"
@@ -100,7 +95,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" height="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="./download"
@@ -213,7 +208,7 @@
       thing yourself</a>, for nothing, and still share with everyone else.</p>
     </div>
     <div class="hero-shot">
-      <img src="/theme/img/tour/images.jpg" width="1280" height="790" alt="Photos in a Peergos drive"/>
+      <img src="/theme/img/tour/images.jpg" srcset="/theme/img/tour/images-640.webp 640w, /theme/img/tour/images.webp 1280w" sizes="(max-width: 900px) calc(100vw - 48px), 640px" width="1280" height="790" fetchpriority="high" alt="Photos in a Peergos drive"/>
     </div>
   </div>
 </header>
@@ -263,7 +258,7 @@
       <p><a href="/download">Get the apps</a></p>
     </div>
     <div class="shot-frame">
-      <img src="/theme/img/tour/sync-crop.png" width="1200" height="440" loading="lazy" alt="A folder synced between this device and a Peergos drive"/>
+      <img src="/theme/img/tour/sync-crop.png" srcset="/theme/img/tour/sync-crop-640.webp 640w, /theme/img/tour/sync-crop.webp 1200w" sizes="(max-width: 760px) calc(100vw - 48px), 560px" width="1200" height="440" loading="lazy" alt="A folder synced between this device and a Peergos drive"/>
     </div>
   </div>
 </section>
@@ -275,16 +270,18 @@
     storage, and see only the file you opened. Write your own and it gets the
     same deal.</p>
     <div class="tour-tabs" role="group" aria-label="Choose an app to see">
-      <button class="tour-tab is-active" data-shot="/theme/img/tour/drive.png" data-caption="The drive itself, on any device you log in from">Drive</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/images.jpg" data-caption="Photos, with the thumbnails made on your device">Photos</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/documents.png" data-caption="A document editor that never sees a server">Documents</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/spreadsheets.png" data-caption="Spreadsheets, same deal">Spreadsheets</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/calendar.png" data-caption="A calendar you can share one event from">Calendar</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/pdf.jpg" data-caption="PDFs, which you can also edit">PDFs</button>
-      <button class="tour-tab" data-shot="/theme/img/tour/social-feed.jpg" data-caption="A feed with no advertisers in it">Social</button>
+      <button class="tour-tab is-active" data-shot="/theme/img/tour/drive.jpg" data-srcset="/theme/img/tour/drive-640.webp 640w, /theme/img/tour/drive.webp 1280w" data-caption="The drive itself, on any device you log in from">Drive</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/sync.png" data-srcset="/theme/img/tour/sync-640.webp 640w, /theme/img/tour/sync.webp 1280w" data-caption="A folder on your computer kept in sync with your drive, both ways">Sync</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/mount.png" data-srcset="/theme/img/tour/mount-640.webp 640w, /theme/img/tour/mount.webp 1280w" data-caption="Your drive in your file manager, with calendars and contacts alongside">Mount</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/images.jpg" data-srcset="/theme/img/tour/images-640.webp 640w, /theme/img/tour/images.webp 1280w" data-caption="Photos, with the thumbnails made on your device">Photos</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/documents.png" data-srcset="/theme/img/tour/documents-640.webp 640w, /theme/img/tour/documents.webp 1199w" data-caption="A document editor that never sees a server">Documents</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/spreadsheets.png" data-srcset="/theme/img/tour/spreadsheets-640.webp 640w, /theme/img/tour/spreadsheets.webp 1199w" data-caption="Spreadsheets, same deal">Spreadsheets</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/calendar.png" data-srcset="/theme/img/tour/calendar-640.webp 640w, /theme/img/tour/calendar.webp 1280w" data-caption="A calendar you can share one event from">Calendar</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/pdf.jpg" data-srcset="/theme/img/tour/pdf-640.webp 640w, /theme/img/tour/pdf.webp 1212w" data-caption="PDFs, which you can also edit">PDFs</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/social-feed.jpg" data-srcset="/theme/img/tour/social-feed-640.webp 640w, /theme/img/tour/social-feed.webp 1200w" data-caption="A feed with no advertisers in it">Social</button>
     </div>
     <div class="shot-frame">
-      <img id="tour-shot" src="/theme/img/tour/drive.png" width="1212" height="931" loading="lazy" alt=""/>
+      <img id="tour-shot" src="/theme/img/tour/drive.jpg" srcset="/theme/img/tour/drive-640.webp 640w, /theme/img/tour/drive.webp 1280w" sizes="(max-width: 948px) calc(100vw - 48px), 900px" width="1280" height="800" loading="lazy" alt=""/>
     </div>
     <p class="tour-caption" id="tour-caption">The drive itself, on any device you log in from</p>
   </div>
@@ -306,7 +303,7 @@
       computer to catch up.</p>
     </div>
     <div class="shot-frame">
-      <img src="/theme/img/tour/share-crop.jpg" width="1200" height="440" loading="lazy" alt="Sharing a file"/>
+      <img src="/theme/img/tour/share-crop.jpg" srcset="/theme/img/tour/share-crop-640.webp 640w, /theme/img/tour/share-crop.webp 1200w" sizes="(max-width: 760px) calc(100vw - 48px), 560px" width="1200" height="440" loading="lazy" alt="Sharing a file"/>
     </div>
   </div>
 </section>
@@ -345,10 +342,10 @@
     </div>
     <div class="supporters">
       <span>Supported by</span>
-      <a href="https://ngi.eu/ngi-projects/ngi-pointer/" target="_blank"><img src="/theme/img/ngi-logo.png" loading="lazy" alt="NGI Pointer"/></a>
-      <a href="https://protocol.ai" target="_blank"><img src="/theme/img/protocol-labs-light.svg" loading="lazy" alt="Protocol Labs"/></a>
-      <a href="https://futo.org" target="_blank"><img src="/theme/img/futo.svg" loading="lazy" alt="FUTO"/></a>
-      <img src="/theme/img/oxfo-logo-small.png" loading="lazy" alt="Oxford Foundry"/>
+      <a href="https://ngi.eu/ngi-projects/ngi-pointer/" target="_blank"><img src="/theme/img/ngi-logo.png" width="86" height="40" loading="lazy" alt="NGI Pointer"/></a>
+      <a href="https://protocol.ai" target="_blank"><img src="/theme/img/protocol-labs-light.svg" width="47" height="40" loading="lazy" alt="Protocol Labs"/></a>
+      <a href="https://futo.org" target="_blank"><img src="/theme/img/futo.svg" width="152" height="40" loading="lazy" alt="FUTO"/></a>
+      <img src="/theme/img/oxfo-logo-small.png" width="79" height="40" loading="lazy" alt="Oxford Foundry"/>
     </div>
   </div>
 </section>
@@ -369,7 +366,7 @@
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" height="60" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
@@ -387,22 +384,22 @@
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
                     <li><a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                      <img src="/theme/img/contact/github.svg" width="100" height="100" alt="Peergos on GitHub">
                     </a></li>
                     <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                      <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
                     </a></li>
                     <li><a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    <img src="/theme/img/contact/reddit.png" width="100" height="100" alt="Peergos on Reddit">
                     </a></li>
                 </ul>
             </div>
@@ -420,10 +417,12 @@
 </footer>
 
 </div>
-<script src="/theme/vendor/jquery/dist/jquery.min.js"></script>
-<script src="/theme/vendor/materialize/js/materialize.min.js"></script>
+<script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
+<script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
 <script>
-    $(".button-collapse").sideNav();
+    document.addEventListener("DOMContentLoaded", function () {
+        $(".button-collapse").sideNav();
+    });
 
 
 </script>
@@ -440,6 +439,7 @@
                   for (var j = 0; j < tabs.length; j++)
                       tabs[j].classList.remove("is-active");
                   e.currentTarget.classList.add("is-active");
+                  shot.srcset = e.currentTarget.dataset.srcset;
                   shot.src = e.currentTarget.dataset.shot;
                   caption.textContent = e.currentTarget.dataset.caption;
               });

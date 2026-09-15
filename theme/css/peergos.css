@@ -12,7 +12,18 @@ nav {
 }
 
 a {
-    color: #26b99a;
+    /* #26b99a is 2.5:1 on white; this is 4.9:1 */
+    color: #1a7f6a;
+}
+
+.btn {
+    background-color: #3fdb9c;
+    color: #2c3e50;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #63e3bd;
 }
 
 h1 {
@@ -42,6 +53,7 @@ nav a {
 
 .btn-blue {
     background-color: #2c3e50;
+    color: #fff;
 }
 
 .btn-blue:hover {
@@ -78,6 +90,17 @@ nav a {
 
 footer.page-footer {
     background-color: #2c3e50;
+}
+
+nav .button-collapse svg {
+    display: block;
+    margin: 16px 0;
+}
+
+/* big enough to tap without catching the link beside it */
+footer.page-footer ul a {
+    display: inline-block;
+    padding: 6px 0;
 }
 
 footer a {
@@ -222,7 +245,7 @@ table.sees td:nth-child(3) {
     display: inline-block;
     border: 2px solid #26b99a;
     border-radius: 2px;
-    color: #26b99a;
+    color: #1a7f6a;
     background-color: transparent;
     padding: 0 1.6rem;
     height: 36px;
@@ -235,7 +258,8 @@ table.sees td:nth-child(3) {
 }
 
 .btn-outline:hover {
-    background-color: #26b99a;
+    background-color: #1a7f6a;
+    border-color: #1a7f6a;
     color: #fff;
 }
 
@@ -552,7 +576,7 @@ table.sees td:nth-child(3) {
     display: block;
     font-size: 2.5em;
     line-height: 1;
-    color: #26b99a;
+    color: #1a7f6a;
     margin-bottom: 0.18em;
 }
 
