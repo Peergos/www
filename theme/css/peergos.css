@@ -679,6 +679,12 @@ table.sees td:nth-child(3) {
     font-size: 1.1em;
 }
 
+.quotes blockquote p {
+    font-size: inherit;
+    max-width: none;
+    margin: 0 0 0.7em 0;
+}
+
 .quotes cite {
     display: block;
     margin-top: 0.7em;
