@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Features</title>
+    <title>Features | Peergos</title>
+    <meta name="description" content="Everything Peergos does: end-to-end encrypted storage and sharing, folder sync, a natively mounted drive, secret links, apps, and metadata the server never sees.">
+    <link rel="canonical" href="https://peergos.org/features">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="Features">
+    <meta property="og:description" content="Everything Peergos does: end-to-end encrypted storage and sharing, folder sync, a natively mounted drive, secret links, apps, and metadata the server never sees.">
+    <meta property="og:url" content="https://peergos.org/features">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li >
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="./download"
@@ -145,51 +157,148 @@
 
     </div>
 </nav>
+<main>
     <div class="container bs-docs-container">
     <div class="row">
-    <div class="col m3 col s4">
+    <div class="col m3 col s4 toc-column">
     <div id="full-toc" class="bs-docs-sidebar hidden-print affix-top hidden-xs hidden-sm" role="complementary">
-  <ul class='nav bs-docs-sidenav'><li class='active'><a href='#secure_and_private_storage_' data-scroll data-url>Secure and private storage</a></li><li><a href='#two_factor_authentication_' data-scroll data-url>Two factor authentication</a></li><li><a href='#sharing_' data-scroll data-url>Sharing</a></li><li><a href='#large_files_' data-scroll data-url>Large files</a></li><li><a href='#sync_client_' data-scroll data-url>Sync client</a></li><li><a href='#search_' data-scroll data-url>Search</a></li><li><a href='#secure_applications_' data-scroll data-url>Secure applications</a></li><li><a href='#private_social_network_' data-scroll data-url>Private social network</a></li><li><a href='#multiple_device_login_' data-scroll data-url>Multiple device login</a></li><li><a href='#metadata_protection_' data-scroll data-url>Metadata protection</a></li><li><a href='#independent_audits_' data-scroll data-url>Independent audits</a></li><li><a href='#quantumresistant_cryptography_' data-scroll data-url>Quantum-resistant Cryptography</a></li><li><a href='#portable_identity_' data-scroll data-url>Portable identity</a></li><li><a href='#automated_host_migration_' data-scroll data-url>Automated host migration</a></li><li><a href='#offline_access_' data-scroll data-url>Offline access</a></li><li><a href='#decentralized_' data-scroll data-url>Decentralized</a></li><li><a href='#open_source_' data-scroll data-url>Open source</a></ul>
+  <ul class='nav bs-docs-sidenav'><li class='active'><a href='#privacy_and_security_' data-scroll data-url>Privacy and security</a></li><li><a href='#your_files_' data-scroll data-url>Your files</a></li><li><a href='#apps_' data-scroll data-url>Apps</a></li><li><a href='#sharing_and_people_' data-scroll data-url>Sharing and people</a></li><li><a href='#yours_to_run_' data-scroll data-url>Yours to run</a></ul>
     </div>
     </div>
-    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
     <h1 class="page-header main-title">Features</h1>
     <div class="bs-docs-section">
-    <h2 id="secure_and_private_storage_">Secure and private storage</h2>
-<p>Peergos's primary design goal is security and privacy. Only you should be able to read your data, your metadata, and your friend list. Peergos encrypts files locally on your device using state of the art encryption (<a href="https://book.peergos.org/security/encryption.html">details</a>) and your keys never leave your device. </p>
-<h2 id="two_factor_authentication_">Two factor authentication</h2>
-<p>You can require extra authentication to login, either an authenticator app, or a security key. </p>
-<h2 id="sharing_">Sharing</h2>
-<p>You can share files in Peergos securely with other Peergos users. Alternatively, you can generate a secret link to a file or a folder which can be shared with anyone. Only people who have that link can view the file and the file still isn't exposed to the server or network. Links can have an expiry, be password protected, or n-use. Links can also be writable.</p>
-<h2 id="large_files_">Large files</h2>
-<p>Peergos can handle arbitrarily large files efficiently. Our maximum file size is far bigger than any other storage provider we are aware of (assuming you have enough space on the server). We can stream large files like videos and start playing immediately, or quickly skip though to a later part. Despite being end-to-end encrypted, we can efficiently modify small sections of large files. </p>
-<h2 id="sync_client_">Sync client</h2>
-<p>You can keep a local folder in sync with a peergos folder. This means you can work offline on your files and sync later when you come online.</p>
-<p><a href="https://book.peergos.org/features/sync.html">Read more</a> or you can use something like rclone with our <a href="https://book.peergos.org/features/webdav.html">webdav bridge</a>.</p>
-<h2 id="search_">Search</h2>
-<p>Client side full text search to quickly find what you want. </p>
-<h2 id="secure_applications_">Secure applications</h2>
-<p>Peergos can safely deploy applications in a strong sandbox to view or modify data directly. We already have a calendar, document editor, spreadsheet editor, PDF viewer, video player, image gallery, task board (kanban) and wiki. See the <a href="https://peergos.net/public/peergos/recommended-apps/index.html?open=true">full list</a>, and there are many more on the way or you can write your own. </p>
-<h2 id="private_social_network_">Private social network</h2>
-<p>You can send anyone an encrypted follow request in Peergos and they can accept, accept and reciprocate, or deny the connection. Who follows who is not visible to us or the network. </p>
-<h2 id="multiple_device_login_">Multiple device login</h2>
-<p>Using your password (and any second factor) you can log in on any device securely. Any files will be downloaded from the network and decrypted on demand locally. Even if your device is compromised after you have logged out, the attacker cannot see any decrypted data. </p>
-<h2 id="metadata_protection_">Metadata protection</h2>
-<p>We go to great lengths to protect your metadata. Filenames, sizes, directory structure, modification times, file types, and your friend list are not exposed to the server (<a href="https://book.peergos.org/security/meta.html">details</a>). Without the decryption key, directories are indistinguishable from small files. Unlike other products out there, Peergos protects your social graph as well. Your contact list is not visible to the server and is stored encrypted in your own space. Furthermore, if a user shares a file with another user, the server can't deduce this relationship. A Peergos server doesn't store any sensitive data or metadata. We take your privacy seriously!</p>
-<h2 id="independent_audits_">Independent audits</h2>
-<p>We have been audited by the world leading security firms, <a href="https://peergos.org/posts/security-audit-2024">Radically Open Security</a> and <a href="https://peergos.org/posts/security-audit">Cure53</a>. All our audit reports are available <a href="https://github.com/Peergos/Peergos/tree/master/audits">here</a>.</p>
-<h2 id="quantumresistant_cryptography_">Quantum-resistant Cryptography</h2>
-<p>Your entire file system in Peergos is encrypted with symmetric cryptography and the initial keys are derived using cryptographic hashing. Both of these are believed to be resistant to quantum computer attacks (You at best get a quadratic speedup from Grover's algorithm). The asymmetric cryptography, which is used to share files, is a hybrid of X25519 and MLEKM.</p>
-<h2 id="portable_identity_">Portable identity</h2>
-<p>You identity in peergos is not tied to a particular server or host. You are free to move to another server and keep all your existing friends and file access. Contrast this with protocols like email where your identity is tied to the domain name of your host - and so if you switch host you need to tell all your friends you new email address. If you migrate to a different server in Peergos, the network automatically figures this out and you don't need to tell any of your friends.</p>
-<h2 id="automated_host_migration_">Automated host migration</h2>
-<p>You can unilaterally move to a different server, and/or run a live mirror of all your data. </p>
-<h2 id="offline_access_">Offline access</h2>
-<p>If you have already logged in on a device you can login 100% offline and view recently accessed files. This is done whilst still not leaving anything unencrypted on your device in case it falls into the wrong hands. </p>
-<h2 id="decentralized_">Decentralized</h2>
-<p>Peergos is built on top of a peer-to-peer networking stack - <a href="https://libp2p.io">libp2p</a>. You can run Peergos on your own machine and still access your files through any other Peergos server. Alternatively you can pay another provider to store your data (they won't be able to read your files). You can also share and interact with with any user on any other server. </p>
-<h2 id="open_source_">Open source</h2>
-<p>Peergos is fully open source (including the server) and self-hostable. </p>
+    <h2 id="privacy_and_security_">Privacy and security</h2>
+<p>Files are encrypted on your device before they go anywhere, with keys that never
+leave it. What is left on the server is blocks of ciphertext and very little
+else.</p>
+<table class="sees">
+<thead><tr><th><span class="visually-hidden">What a server can see</span></th><th>Peergos</th><th>A typical cloud drive</th></tr></thead>
+<tbody>
+<tr><td>What is in your files</td><td>Hidden</td><td>Readable by the server</td></tr>
+<tr><td>What your files are called</td><td>Hidden</td><td>Readable</td></tr>
+<tr><td>How big they are</td><td>Hidden</td><td>Readable</td></tr>
+<tr><td>How your folders are arranged</td><td>Hidden</td><td>Readable</td></tr>
+<tr><td>Who you share with</td><td>Hidden</td><td>Readable</td></tr>
+<tr><td>Who your contacts are</td><td>Hidden</td><td>Readable</td></tr>
+</tbody>
+</table>
+<h3 data-hidden-from-toc="true" id="encrypted-before-it-leaves-your-device">Encrypted before it leaves your device</h3>
+<p>Your keys are derived from your password on your own machine and are never sent
+to us. A Peergos server holds no key that can read your files.
+<a href="https://book.peergos.org/security/encryption.html">How the encryption works</a>.</p>
+<h3 data-hidden-from-toc="true" id="metadata-is-protected-too">Metadata is protected too</h3>
+<p>File names, sizes, folder structure, modification times and file types are not
+visible to the server, and without the key a directory is indistinguishable from
+a small file. Your contact list is stored encrypted in your own space, so the
+server cannot see who you know, and when you share a file with someone the
+server cannot tell that you did.
+<a href="https://book.peergos.org/security/meta.html">How the metadata protection works</a>.</p>
+<h3 data-hidden-from-toc="true" id="two-factor-authentication">Two factor authentication</h3>
+<p>Log in with an authenticator app or a security key. Peergos speaks WebAuthn and
+CTAP2 directly, so hardware keys work in the desktop apps as well as the
+browser, including Windows Hello and keys like the Nitrokey that use self
+attestation. Single use backup codes cover the day the key is in another coat.</p>
+<h3 data-hidden-from-toc="true" id="post-quantum-cryptography">Post-quantum cryptography</h3>
+<p>Your filesystem is encrypted with symmetric cryptography and hashing, both of
+which hold up against a quantum computer. Sharing uses a hybrid of X25519 and
+MLKEM-1024, so a file you share today is not readable by someone who records it
+now and waits for better hardware.</p>
+<h3 data-hidden-from-toc="true" id="independently-audited">Independently audited</h3>
+<p>We have been audited by <a href="/posts/security-audit-2024">Radically Open Security</a>
+and <a href="/posts/security-audit">Cure53</a>. Both reports are published in full,
+<a href="https://github.com/Peergos/Peergos/tree/master/audits">in the repository</a>.</p>
+<h2 id="your_files_">Your files</h2>
+<p><img src="/theme/img/tour/drive.png" alt="The Peergos drive" class="shot" width="100%" /></p>
+<h3 data-hidden-from-toc="true" id="sync-a-folder">Sync a folder</h3>
+<p>Almost any folder can be synced, not just your photos. Point it at documents, a
+music library, a project you are working on, whatever you keep, and it stays in
+step with a folder in Peergos, on as many devices as you like, in both
+directions. Change one section of a large file and only the changed chunks are
+uploaded. Pause and resume it, watch the status of each pair,
+download a log when something looks wrong, and tell it to leave your mobile data
+alone. Turn deletion propagation off and sync becomes a backup.
+<a href="https://book.peergos.org/features/sync.html">More about sync</a>.</p>
+<h3 data-hidden-from-toc="true" id="mount-it-as-a-drive">Mount it as a drive</h3>
+<p>On Windows, Linux and Android your Peergos drive can appear in the file manager
+as an ordinary drive, decrypting on demand as you open files. It takes a second
+factor to mount, and it can be mounted for one session only. Not yet on macOS.
+<a href="https://book.peergos.org/features/mount.html">More about mounting</a>.</p>
+<h3 data-hidden-from-toc="true" id="webdav-caldav-and-carddav">WebDAV, CalDAV and CardDAV</h3>
+<p>The desktop app can also speak WebDAV, so tools like rclone work against your
+drive, and CalDAV and CardDAV, so Thunderbird and friends can read your calendar,
+your tasks and your contacts. Also not yet on macOS. On Android there is nothing
+to set up: your calendars and contacts sync into the phone's own calendar and
+contacts apps, both ways.
+<a href="https://book.peergos.org/features/webdav.html">More about the WebDAV bridge</a>.</p>
+<h3 data-hidden-from-toc="true" id="files-of-any-size">Files of any size</h3>
+<p>There is no maximum file size beyond the total space in your account, which as
+far as we know is a higher ceiling than any other provider's. Video streams from the middle without
+downloading the start, and a small edit to a huge file rewrites only the part
+that changed, encryption and all.</p>
+<h3 data-hidden-from-toc="true" id="zip-archives-opened-in-place">Zip archives, opened in place</h3>
+<p>Look inside a zip without downloading and unpacking it, and add, rename or
+delete entries where they sit. Dropping a folder in adds everything in it in one
+write.</p>
+<h3 data-hidden-from-toc="true" id="search">Search</h3>
+<p>Full text search over your files, run on your device, because the server has
+nothing to search.</p>
+<h3 data-hidden-from-toc="true" id="offline">Offline</h3>
+<p>Log in and read recently used files with no network at all, and nothing is left
+unencrypted on disk for whoever finds the laptop.</p>
+<h2 id="apps_">Apps</h2>
+<p><img src="/theme/img/tour/documents.png" alt="The document editor" class="shot" width="100%" /></p>
+<h3 data-hidden-from-toc="true" id="a-calendar-a-document-editor-a-spreadsheet-and-more">A calendar, a document editor, a spreadsheet, and more</h3>
+<p>Peergos ships a calendar, a document editor, a spreadsheet editor, a PDF viewer
+that also edits, a media player, an image gallery, a task board, a markdown
+browser and a wiki. They are ordinary web apps, and none of them contains any
+encryption or sharing code, because the layer underneath handles that.
+<a href="https://peergos.net/public/peergos/recommended-apps/index.html?open=true">The full list</a>.</p>
+<h3 data-hidden-from-toc="true" id="sandboxed-and-asking-permission">Sandboxed, and asking permission</h3>
+<p>An app runs in a strong sandbox and sees only the file you opened with it. It
+cannot phone home, and it cannot read the rest of your drive. Write your own and
+it gets the same deal.</p>
+<h2 id="sharing_and_people_">Sharing and people</h2>
+<p><img src="/theme/img/tour/share.jpg" alt="Sharing a file" class="shot" width="100%" /></p>
+<h3 data-hidden-from-toc="true" id="share-with-people-you-know">Share with people you know</h3>
+<p>Send an encrypted follow request to another Peergos user. They can accept,
+accept and reciprocate, or decline. Who follows whom is not visible to us or to
+the network, so your social graph stays yours.</p>
+<h3 data-hidden-from-toc="true" id="or-send-a-secret-link">Or send a secret link</h3>
+<p>Generate a link to a file or a folder and send it to someone who has never heard
+of Peergos. Only someone with the link can open it, and the file is still not
+exposed to the server or the network on the way. Links can expire, carry a
+password, work a fixed number of times, or allow writing back.
+<a href="https://book.peergos.org/features/secret.html">More about secret links</a>.</p>
+<h3 data-hidden-from-toc="true" id="a-social-network-with-no-advertisers-in-it">A social network with no advertisers in it</h3>
+<p>Posts, a feed and a profile, shared with the people you choose, on top of the
+same encrypted storage as everything else.</p>
+<h2 id="yours_to_run_">Yours to run</h2>
+<h3 data-hidden-from-toc="true" id="your-identity-is-not-our-property">Your identity is not our property</h3>
+<p>Your identity is not tied to a server. Move to another one and keep your
+friends, your files and your links. Compare that with email, where changing host
+means telling everyone your new address. Peergos works it out for you and nobody
+has to be told.</p>
+<h3 data-hidden-from-toc="true" id="move-house-or-keep-a-spare">Move house, or keep a spare</h3>
+<p>You can migrate to a different server on your own initiative, run a live mirror
+of everything you have, and pull your account away from a home server that has
+stopped answering.</p>
+<h3 data-hidden-from-toc="true" id="log-in-anywhere">Log in anywhere</h3>
+<p>Your password and any second factor get you in on any device. Files are fetched
+and decrypted as you use them, and once you log out a compromised device cannot
+read any of it.</p>
+<h3 data-hidden-from-toc="true" id="self-host-and-still-talk-to-everyone">Self-host, and still talk to everyone</h3>
+<p>Run the server yourself, for nothing, on your own hardware, and still friend
+and share with people on any other server. It is the same software we run, and
+all of it, server included, is open source.</p>
+<h3 data-hidden-from-toc="true" id="peer-to-peer-underneath">Peer to peer underneath</h3>
+<p>Peergos is built on <a href="https://libp2p.io">libp2p</a>. Your files live wherever you
+choose to keep them, and every server can reach every other one.</p>
+<div class="page-cta">
+<a href="https://peergos.net/?signup=true" target="_new" class="btn"><span>SIGN UP</span></a>
+<p>Or <a href="https://book.peergos.org">read the technical book</a>, or
+<a href="https://github.com/Peergos/Peergos">run the server yourself</a>.</p>
+</div>
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
@@ -199,6 +308,7 @@
     </div>
     </div>
     </div>
+</main>
     <div class="index">
 
 
@@ -206,11 +316,11 @@
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -220,24 +330,27 @@
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -245,8 +358,7 @@
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>

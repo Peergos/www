@@ -52,10 +52,6 @@ body {
 	margin: 1rem;
 }
 
-main > * {
-	max-width: 80ch;
-}
-
 pre,
 code {
 	font-size: 1rem;

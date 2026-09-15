@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>About</title>
+    <title>About | Peergos</title>
+    <meta name="description" content="Peergos is a non-profit building the private web, where you own your data and choose who can read it. Who we are and why we are doing it.">
+    <link rel="canonical" href="https://peergos.org/about">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="About">
+    <meta property="og:description" content="Peergos is a non-profit building the private web, where you own your data and choose who can read it. Who we are and why we are doing it.">
+    <meta property="og:url" content="https://peergos.org/about">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li >
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="./download"
@@ -145,42 +157,47 @@
 
     </div>
 </nav>
+<main>
     <div class="container bs-docs-container">
     <div class="row">
-    <div class="col m3 col s4">
+    <div class="col m3 col s4 toc-column">
     <div id="full-toc" class="bs-docs-sidebar hidden-print affix-top hidden-xs hidden-sm" role="complementary">
-  <ul class='nav bs-docs-sidenav'><li class='active'><a href='#vision_' data-scroll data-url>Vision</a></li><li><a href='#team_' data-scroll data-url>Team</a><ul class='nav'><li><a href='#ian_' data-scroll data-url>Ian</a></li><li><a href='#chris_' data-scroll data-url>Chris</a></li><li><a href='#kevin_' data-scroll data-url>Kevin</a></li><li><a href='#jonathan_' data-scroll data-url>Jonathan</a></li><li><a href='#joanna_' data-scroll data-url>Joanna</a></li></ul>
+  <ul class='nav bs-docs-sidenav'><li class='active'><a href='#vision_' data-scroll data-url>Vision</a></li><li><a href='#where_the_money_comes_from_' data-scroll data-url>Where the money comes from</a></li><li><a href='#team_' data-scroll data-url>Team</a></ul>
     </div>
     </div>
-    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
     <h1 class="page-header main-title">About</h1>
     <div class="bs-docs-section">
     <h2 id="vision_">Vision</h2>
-<p>Peergos is building the next web - the private web, where end
-users are in control of their data. Imagine web apps being secure
-by default and unable to track you. Imagine being able to control
-exactly what personal data each web app can see. Imagine never
-having to log in to an app ever again. You own your data and
-decide where it is stored and who can see it. At Peergos, we
-believe that privacy is a fundamental human right and we want to
-make it easy for everyone to interact online in ways that respect
-this right. Peergos is a <strong>non-profit</strong> company, setup to protect this human right - we don't have investors!</p>
-<p>Peergos is a decentralised protocol and open-source platform for
-storage, social media and applications. It is designed from the
-ground up for privacy and security, and restores ownership and
-control to the user through seamless access management using
-quantum-resistant end-to-end encryption.</p>
+<p>Peergos is the private web: a place where you own your data, decide where it is
+kept, and choose who can see it.</p>
+<p>Web apps should be secure by default and unable to track you. You should be able
+to say exactly what each one is allowed to see. You should not have to log in to
+an app ever again. Privacy is a fundamental human right, and we want using the
+internet to respect that right without anyone having to think about it.</p>
+<p>Underneath, Peergos is a decentralised protocol and an open-source platform for
+storage, social media and applications. It was designed from the ground up
+around post-quantum end-to-end encryption and fine grained access control, which
+is what puts you rather than a server in charge of your own files.</p>
+<h2 id="where_the_money_comes_from_">Where the money comes from</h2>
+<p>Peergos is a non-profit. What it costs to run is covered by the people who use
+it, through subscriptions and donations, with grants from organisations like
+NLnet and the Next Generation Internet programme paying for particular pieces of
+work, such as our security audits.</p>
+<p>No investors, no debt, no advertising, and no free tier that paying customers
+have to subsidise. Nobody upstream of us needs us to grow at your expense.
+<a href="/pricing">What it costs</a>.</p>
 <h2 id="team_">Team</h2>
-<h3 id="ian_">Ian</h3>
+<h3 data-hidden-from-toc="true" id="ian">Ian</h3>
 <p>Ian did his DPhil in Particle Physics at Oxford University, during which he mainly worked on a new x86 system emulator, <a href="https://github.com/ianopolous/JPC">JPC</a>. After his doctorate he was the lead developer on an x86 Linux process emulator which was able to achieve 80% native speed on x86 hardware. As well as emulation, he is passionate about distributed systems and cryptography, which is in his blood as his grandfather worked at Bletchley park during WWII. Both of these are in abundance in Peergos.</p>
-<h3 id="chris_">Chris</h3>
-<p>Chris also has a DPhil in Particle Physics from Oxford University and used to work on the Large Hadron Collider before turning his focus to software engineering. He has written an ACID compliant distributed noSQL database with better performance than Cassandra. </p>
-<h3 id="kevin_">Kevin</h3>
+<h3 data-hidden-from-toc="true" id="chris">Chris</h3>
+<p>Chris also has a DPhil in Particle Physics from Oxford University and used to work on the Large Hadron Collider before turning his focus to software engineering. He has written an ACID compliant distributed noSQL database with better performance than Cassandra.</p>
+<h3 data-hidden-from-toc="true" id="kevin">Kevin</h3>
 <p>Kevin ported the world's first full x86 system emulator to run in javascript.  He followed this up with the first javascript port of a fast DOS emulator and more recently contributed to a Linux emulator capable of running WINE in a web browser.</p>
-<h3 id="jonathan_">Jonathan</h3>
+<h3 data-hidden-from-toc="true" id="jonathan">Jonathan</h3>
 <p>Jonathan completed his PhD in Applied Probability at the University of Melbourne. He worked in various quantitative roles in banking in Australia and the UK before changing industries to become a software engineer and build enterprise data science products.</p>
-<h3 id="joanna_">Joanna</h3>
-<p>Joanna is an award-winning science communicator with a DPhil in Zoology from Oxford University. She won FameLab Poland and "I'm a Scientist, get me out of here!", presented for the Discovery Channel and spoken at TEDx. She splits her time between academia, popular science writing and public engagement.</p>
+<h3 data-hidden-from-toc="true" id="joanna">Joanna</h3>
+<p>Joanna is an award-winning science communicator with a DPhil in Zoology from Oxford University. She won FameLab Poland and &quot;I'm a Scientist, get me out of here!&quot;, presented for the Discovery Channel and spoken at TEDx. She splits her time between academia, popular science writing and public engagement.</p>
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
@@ -190,6 +207,7 @@ quantum-resistant end-to-end encryption.</p>
     </div>
     </div>
     </div>
+</main>
     <div class="index">
 
 
@@ -197,11 +215,11 @@ quantum-resistant end-to-end encryption.</p>
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -211,24 +229,27 @@ quantum-resistant end-to-end encryption.</p>
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -236,8 +257,7 @@ quantum-resistant end-to-end encryption.</p>
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>

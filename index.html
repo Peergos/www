@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Peergos</title>
+    <meta name="description" content="Peergos is post-quantum end-to-end encrypted storage, sharing and sync. Your files, your metadata and who you share with stay private, even from us.">
+    <link rel="canonical" href="https://peergos.org/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="Peergos">
+    <meta property="og:description" content="Peergos is post-quantum end-to-end encrypted storage, sharing and sync. Your files, your metadata and who you share with stay private, even from us.">
+    <meta property="og:url" content="https://peergos.org/">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li >
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="./download"
@@ -145,255 +157,214 @@
 
     </div>
 </nav>
-    <div class="hero" align="center">
-        <div id="particles"></div>
+<main>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Peergos",
+  "url": "https://peergos.org",
+  "logo": "https://peergos.org/theme/img/social-card.png",
+  "email": "peergos@peergos.org",
+  "sameAs": [
+    "https://github.com/Peergos/Peergos",
+    "https://mastodon.social/@peergos",
+    "https://bsky.app/profile/peergos.org",
+    "https://twitter.com/peergos",
+    "https://reddit.com/r/peergos",
+    "https://matrix.to/#/#peergos-chat:matrix.org"
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Peergos",
+  "url": "https://peergos.org",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Windows, macOS, Linux, Android, web browser",
+  "description": "End-to-end encrypted storage, sharing and sync, with the file names, sizes, folder structure and contact list hidden from the server.",
+  "license": "https://github.com/Peergos/Peergos/blob/master/LICENSE",
+  "isAccessibleForFree": false,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "GBP",
+    "lowPrice": "3",
+    "highPrice": "25",
+    "offerCount": "3",
+    "url": "https://peergos.org/pricing"
+  }
+}
+</script>
 
-	<div class="hero-image"></div>
-	
-        <div class="title-text">
-	  <center>
-	    <div style="text-align:center;width:fit-content;display:table;">
-              <h2> Control your data. <br/> Control your destiny. </h2>
-	    </div>
-	  </center>
-          <h3> Your private space online </h3>
-          <h3>End-to-end encrypted storage, sharing, and sync—no tracking, no ads.</h3>
-
-        <p>
-        <a href="https://peergos.net/?signup=true" target="_new" class="btn">
-        <span>
-        Sign up now 
-        </span>
-        </a>
-        </p>
-        </div>
-
-    </div>
-    <div id="screenshots" class="feature-dark" align="center">
-      <div id="tour" style="padding-top:20px;"></div>
-    </div>
-    <div class="feature-dark" align="center">
-        <div class="row">
-
-        <div class="col m6">
-        <h2>Private <br> Secure <br> Simple</h2>
-        </div>
-
-        <div class="col m6">
-        <p>
-        Peergos is a secure
-        and private space where you can store, share and view your photos, videos,
-        music and documents. 
-        </p>
-        <p>
-        Peergos secures your files with quantum-resistant end-to-end encryption
-        and ensures all data about your files, including who you share them
-        with, remains private.
-        </p>
-        </div>
-
-        </div>
-    </div>
-
-    <div class="feature-light" align="center">
-      <div class="row">
-
-        <div class="col m6 top">
-        <h2>Share with confidence</h2>
-        </div>
-          
-        <div class="col m6">
-        <p>
-        You can be sure that you're only sharing with the people
-        you want to thanks to our post-quantum encryption.
-        Sharing on Peergos is between friends only. </p>
-        <p>
-        Peergos can also create secret links to your files for you to send
-        to friends and family who aren't yet Peergos users.</p>
-        </div>
-
-        <div class="col m6 bottom">
-        <h2>Share with confidence</h2>
-        </div>
-
-        </div>
-    </div>
-
-    <div class="feature-dark" align="center">
-      <div class="row">
-
-      <div class="col m6">
-      <h2> Secure Sync Client</h2>
-      </div>
-
-      <div class="col m6">
-      <p> 
-          Synchronise or backup folders across multiple devices with everything end-to-end encrypted.
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>Control your data.<br/>Control your destiny.</h1>
+      <p class="hero-sub">Post-quantum end-to-end encrypted storage, sharing
+      and sync. Not only your files, but their names, their sizes, and who you
+      share them with, stay yours.</p>
+      <p class="hero-actions">
+        <a href="https://peergos.net/?signup=true" target="_new" class="btn"><span>CREATE AN ACCOUNT</span></a>
+        <a href="/download" class="btn-outline">DOWNLOAD THE APPS</a>
       </p>
-      <a href="/download" class="btn-outline">Download for Windows/MacOS/Linux/Android</a>
-      </div>
-
-      </div>
+      <p class="hero-note">Or <a href="https://book.peergos.org/features/self.html">run the whole
+      thing yourself</a>, for nothing, and still share with everyone else.</p>
     </div>
-
-    <div class="feature-light" align="center">
-      <div class="row">
-
-      <div class="col m6 top">
-      <h2> Portable identity and <br> multi-device access</h2>
-      </div>
-      
-      <div class="col m6">
-      <p> 
-      Your identity in Peergos is under your control and independent of
-      your home server. 
-      You can migrate server and keep all your data, links and friends. 
-      </p>
-      <p>
-      Log in to your account from any device with just your username, 
-      password and any 2FA you've enabled. </p>
-      </div>
-
-      <div class="col m6 bottom">
-      <h2> Portable identity and <br> multi-device access</h2>
-      </div>
-      
-      </div>
+    <div class="hero-shot">
+      <img src="/theme/img/tour/images.jpg" width="1280" height="790" alt="Photos in a Peergos drive"/>
     </div>
+  </div>
+</header>
 
-    <div class="feature-dark" align="center">
-      <div class="row">
+<section class="stats">
+  <div class="inner">
+    <div class="stat"><span class="figure">2</span> independent security audits, both published in full</div>
+    <div class="stat"><span class="figure">0</span> investors, so nothing to sell but storage</div>
+    <div class="stat"><span class="figure">0</span> file names, sizes or contacts visible to us</div>
+    <div class="stat"><span class="figure">100%</span> open source, <strong>server included</strong></div>
+  </div>
+</section>
 
-      <div class="col m6 top">
-      <h2> Reduce your <br> online footprint </h2>
-      </div>
-
-      <div class="col m6">
-      <p> 
-      Peergos doesn't monitor your online activity to sell to advertisers or
-      other third parties and makes sure your files stay safe from unwanted
-      intruders like web scrapers.
-      </p>
-      <p>
-      Peergos puts you back in control of your files and your privacy. It's up
-      to you what other people can see.</p>
-      </div>
-
-      </div>
-    </div>
-
-    <div class="feature-light" align="center">
-        <div class="row">
-
-        <div class="col m6 top">
-          <h2>Features you won't <br> find anywhere else</h2>
-        </div>
-            
-       <div class="col m6" style="text-align:left;">
-        <p>
-        <ul>
-            <li><b> Offline access </b>- Login and view recent files entirely offline </li> 
-            <li><b> Post-Quantum end-to-end encryption </b> - your files are always protected, in transit and at rest </li>
-            <li><b> Protected metadata </b>- your contact list, file sizes, and directory structure can't be seen, even by us</li>
-            <li><b> Trustless architecture </b>- your data is safe, no matter where Peergos runs </li>
-        </ul>
-        </p>
-        </div>
-
-       <div class="col m6 bottom">
-           <h2>Features you won't <br> find anywhere else</h2>
-       </div>
-
-        </div>
-    </div>
-
-    <div class="feature-dark" align="center">
-    <div class="row">
-
-      <div class="col m6">
-      <center>
-      <h2>Our supporters</h2>
-      <a href="https://www.ngi.eu">
-      <img src="/theme/img/ngi-logo.png"/>
-      </a>
-      <a href="https://protocol.ai">
-      <img src="/theme/img/protocol-labs-light.svg"/>
-      </a>
-      <img src="/theme/img/oxfo-logo-small.png" />
-      <a href="https://futo.org">
-      <img src="/theme/img/futo.svg" style="width:250px; margin:20px;"/>
-      </a>
-      </center>
-      </div>
-
-      <div class="col m6">
-      <p>
-      We're proud to be supported by exciting world-class organizations such as the Next Generation Internet Program for Open Internet Renovation (<a href="https://ngi.eu/ngi-projects/ngi-pointer/" target="_blank">NGI-POINTER</a>), <a href="https://protocol.ai/" target="_blank">Protocol Labs</a>, <a href="https://futo.org" target="_blank">FUTO</a> and the Oxford Foundry at the University of Oxford. 
-      </p>
-      <p>
-          <b>"With Peergos, I can finally store my data without having to trust the backend security."</b>
-          <br/>- Solène Rapenne,
-          <br/>Qubes OS team member, former OpenBSD developer
-          <br/><br/>
-          <b>"This is the most important project right now for the free world, and I want to help it move along faster."</b>
-          <br/>- A happy customer
-          
-      </p>
-      </div>
-
-    </div>
-    </div>
-
-    <div class="feature-light" align="center">
-    <div class="row">
-
-      <div class="col m6 top">
-          <h2>Open and <br> transparent</h2>
-      </div>
-        
-      <div class="col m6">
-      <p>
-      There's no security in obscurity, so we're committed to keeping
-      everything we do open and transparent. Peergos is an open-source project
-      and all our code is available to be independently verified for
-      vulnerabilities, including our server-side source. Because of this and our peer-to-peer protocol, you can self-host and still friend and share with anyone on any other server. We've been audited by
-      <a href="https://cure53.de">Cure53</a> and <a href="https://www.radicallyopensecurity.com/">Radically Open Security</a> and you can read their reports <a
-      href="https://cure53.de/pentest-report_peergos.pdf">here</a> and <a href="https://raw.githubusercontent.com/Peergos/Peergos/refs/heads/master/audits/Peergos%20penetration%20test%20report%202024%201.0.pdf">here</a>.
-      </p>
-      <p>
-      Want to see more? Check out our GitHub repo <a href="https://github.com/Peergos/Peergos">here</a>.
-      </p>
-      </div>
-
-      <div class="col m6 bottom">
-          <h2>Open and <br> transparent</h2>
-      </div>
-      
-    </div>
-    </div>
-
+<section class="band band-dark">
+  <div class="inner split">
     <div>
-        <center>
-            <p>
-                <a href="https://peergos.net/?signup=true" target="_new" class="btn">
-                    <span>
-                        Sign up now 
-                    </span>
-                </a>
-            </p>
-        </center>
+      <h2>Your provider can read more than you think</h2>
+      <p>Encrypting the contents is the easy half. Most services still hold the
+      file names, the folder structure, the sizes and the list of everyone you
+      have ever shared with, which is plenty to work with. Peergos does not
+      hold any of it.</p>
+      <p><a href="/features#privacy_and_security_">The whole list, and how it works</a></p>
     </div>
+    <table class="sees">
+      <thead><tr><th><span class="visually-hidden">What a server can see</span></th><th>Peergos</th><th>A typical cloud drive</th></tr></thead>
+      <tbody>
+        <tr><td>What is in your files</td><td>Hidden</td><td>Readable</td></tr>
+        <tr><td>What they are called</td><td>Hidden</td><td>Readable</td></tr>
+        <tr><td>How your folders are arranged</td><td>Hidden</td><td>Readable</td></tr>
+        <tr><td>Who you share with</td><td>Hidden</td><td>Readable</td></tr>
+        <tr><td>Who your contacts are</td><td>Hidden</td><td>Readable</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner split">
+    <div>
+      <h2>A drive, not a website you visit</h2>
+      <p>Sync any folder, in both directions, on as many devices as you like:
+      documents, a music library, the project you are working on. Change one
+      part of a large file and only that part goes up.</p>
+      <p>On Windows, Linux and Android it mounts as an ordinary drive in your
+      file manager, decrypting as you open things. Calendars and contacts sync
+      to your phone's own apps, and to Thunderbird over CalDAV and CardDAV.</p>
+      <p><a href="/download">Get the apps</a></p>
+    </div>
+    <div class="shot-frame">
+      <img src="/theme/img/tour/sync-crop.png" width="1200" height="440" loading="lazy" alt="A folder synced between this device and a Peergos drive"/>
+    </div>
+  </div>
+</section>
+
+<section class="band band-dark tour">
+  <div class="inner">
+    <h2>And everything you keep in it</h2>
+    <p class="tour-lead">The apps run in a sandbox, on top of the same encrypted
+    storage, and see only the file you opened. Write your own and it gets the
+    same deal.</p>
+    <div class="tour-tabs" role="group" aria-label="Choose an app to see">
+      <button class="tour-tab is-active" data-shot="/theme/img/tour/drive.png" data-caption="The drive itself, on any device you log in from">Drive</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/images.jpg" data-caption="Photos, with the thumbnails made on your device">Photos</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/documents.png" data-caption="A document editor that never sees a server">Documents</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/spreadsheets.png" data-caption="Spreadsheets, same deal">Spreadsheets</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/calendar.png" data-caption="A calendar you can share one event from">Calendar</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/pdf.jpg" data-caption="PDFs, which you can also edit">PDFs</button>
+      <button class="tour-tab" data-shot="/theme/img/tour/social-feed.jpg" data-caption="A feed with no advertisers in it">Social</button>
+    </div>
+    <div class="shot-frame">
+      <img id="tour-shot" src="/theme/img/tour/drive.png" width="1212" height="931" loading="lazy" alt=""/>
+    </div>
+    <p class="tour-caption" id="tour-caption">The drive itself, on any device you log in from</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="inner split">
+    <div>
+      <h2>Share with someone, or with a secret link</h2>
+      <p>Send an encrypted follow request to another Peergos user and share
+      with them directly. Nobody, us included, can see who is connected to
+      whom.</p>
+      <p>For everyone else there are secret links. They work for people who
+      have never heard of Peergos, and the file is still not exposed to the
+      server on the way. Give a link an expiry, a password, a fixed number of
+      uses, or write access.</p>
+      <p>Sharing uses a hybrid of X25519 and MLKEM-1024, so what you share
+      today is no good to someone who records it now and waits for a quantum
+      computer to catch up.</p>
+    </div>
+    <div class="shot-frame">
+      <img src="/theme/img/tour/share-crop.jpg" width="1200" height="440" loading="lazy" alt="Sharing a file"/>
+    </div>
+  </div>
+</section>
+
+<section class="band band-dark">
+  <div class="inner">
+    <h2>Open, audited, and not ours to sell</h2>
+    <div class="split">
+      <div>
+        <p>There is no security in obscurity, so all of it is open, the server
+        as well as the client. We have been audited twice, by
+        <a href="/posts/security-audit-2024">Radically Open Security</a> and
+        <a href="/posts/security-audit">Cure53</a>, and both reports are
+        published in full.</p>
+        <p>Peergos is a non-profit. No investors, no debt, no advertising, and
+        no free tier that paying customers have to subsidise.
+        <a href="/pricing">What it costs</a>.</p>
+      </div>
+      <div class="quotes">
+        <blockquote>With Peergos, I can finally store my data without having to
+        trust the backend security.
+        <cite>Solène Rapenne, Qubes OS team member, former OpenBSD developer</cite></blockquote>
+        <blockquote>This is the most important project right now for the free
+        world, and I want to help it move along faster.
+        <cite>A happy customer</cite></blockquote>
+      </div>
+    </div>
+    <div class="supporters">
+      <span>Supported by</span>
+      <a href="https://ngi.eu/ngi-projects/ngi-pointer/" target="_blank"><img src="/theme/img/ngi-logo.png" loading="lazy" alt="NGI Pointer"/></a>
+      <a href="https://protocol.ai" target="_blank"><img src="/theme/img/protocol-labs-light.svg" loading="lazy" alt="Protocol Labs"/></a>
+      <a href="https://futo.org" target="_blank"><img src="/theme/img/futo.svg" loading="lazy" alt="FUTO"/></a>
+      <img src="/theme/img/oxfo-logo-small.png" loading="lazy" alt="Oxford Foundry"/>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="inner">
+    <h2>Take it back</h2>
+    <p>
+      <a href="https://peergos.net/?signup=true" target="_new" class="btn"><span>CREATE AN ACCOUNT</span></a>
+      <a href="/features" class="btn-outline">SEE EVERYTHING IT DOES</a>
+    </p>
+  </div>
+</section>
+</main>
 
 
 <footer class="page-footer">
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -403,24 +374,27 @@
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -428,8 +402,7 @@
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>
@@ -446,80 +419,23 @@
 
 </script>
 
-    <style>
-      .dot {
-	  height: 10px;
-	  width: 10px;
-	  border-radius: 50%;
-	  background: black;
-	  opacity: 0.2;
-	  cursor: pointer;
-	  position: relative;
-	  display: inline-block;
-	  margin: 0 6px;
-      }
-      
-      .dot-selected {
-	  opacity: 0.7;
-	  cursor: default;
-      }
-    </style>
-    <script src="/theme/js/luna-carousel.js"></script>
     <script>
-      // setup tour
-      const tourData = [
-	  {
-	      text: "Sync your media and files",
-	      image: "theme/img/tour/sync.png"
-	  },
-	  {
-	      text: "Mount your Peergos drive natively",
-	      image: "theme/img/tour/mount.png"
-	  },
-	  {
-	      text: "View your photos",
-	      image: "theme/img/tour/images.jpg"
-	  },
-	  {
-	      text: "Play your music collection",
-	      image: "theme/img/tour/music.jpg"
-	  },
-	  {
-	      text: "Watch videos",
-	      image: "theme/img/tour/video.jpg"
-	  },
-	  {
-	      text: "View and edit documents",
-	      image: "theme/img/tour/documents.png"
-	  },
-	  {
-	      text: "View and edit spreadsheets",
-	      image: "theme/img/tour/spreadsheets.png"
-	  },
-	  {
-	      text: "View PDF documents",
-	      image: "theme/img/tour/pdf.jpg"
-	  },
-	  {
-	      text: "Manage your calendar",
-	      image: "theme/img/tour/calendar.png"
-	  },
-	  {
-	      text: "Socialise with your friends",
-	      image: "theme/img/tour/social-feed.jpg"
-	  }];
-      function buildTour() {
-	  const container = document.getElementById('tour')
-          const carousel = new LunaCarousel(container, { interval: 3000 })
-	  for (var i=0; i < tourData.length; i++) {
-	      // add images
-              carousel.append('<div style="display:flex;flex-direction: column;align-items: center;">' +
-                              '<img style="objectFit:contain;position: center center;max-height:500px;max-width:100%;" src="' + tourData[i].image + '"/>' +
-                              '<label style="height:4em; font-size: 1.5em;">' + tourData[i].text + '</label>'+
-                              '</div>')
-	  }
-      }
-      buildTour();
+      // The tour is driven by the reader: no timer, and only the picture they
+      // asked for is fetched.
+      (function () {
+          var shot = document.getElementById("tour-shot");
+          var caption = document.getElementById("tour-caption");
+          var tabs = document.querySelectorAll(".tour-tab");
+          for (var i = 0; i < tabs.length; i++) {
+              tabs[i].addEventListener("click", function (e) {
+                  for (var j = 0; j < tabs.length; j++)
+                      tabs[j].classList.remove("is-active");
+                  e.currentTarget.classList.add("is-active");
+                  shot.src = e.currentTarget.dataset.shot;
+                  caption.textContent = e.currentTarget.dataset.caption;
+              });
+          }
+      })();
     </script>
 </body>
 </html>

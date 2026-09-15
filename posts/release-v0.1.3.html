@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Peergos release v0.1.3</title>
+    <title>Peergos release v0.1.3 | Peergos</title>
+    <meta name="description" content="We've been hard at work, so hard in fact that we're only now writing another blog post. We've sped everything up, enabled native builds, added garbage">
+    <link rel="canonical" href="https://peergos.org/posts/release-v0.1.3">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="Peergos release v0.1.3">
+    <meta property="og:description" content="We've been hard at work, so hard in fact that we're only now writing another blog post. We've sped everything up, enabled native builds, added garbage">
+    <meta property="og:url" content="https://peergos.org/posts/release-v0.1.3">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li >
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="../download"
@@ -145,29 +157,30 @@
 
     </div>
 </nav>
+<main>
     <div class="container bs-docs-container">
     <div class="row">
-    <div class="col m3 col s4">
+    <div class="col m3 col s4 toc-column">
     </div>
-    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
     <h1 class="page-header main-title">Peergos release v0.1.3</h1>
     <h3 class="main-title">Published: Sun 15 September 2019</h3>
     <div class="bs-docs-section">
     <p>We've been hard at work, so hard in fact that we're only now writing another blog post. We've sped everything up, enabled native builds, added garbage collection, added S3 storage support and fixed several bugs.</p>
 <p>Everything in this post is contained in our latest release, <a href="https://peergos.net/public/peergos/releases">v0.1.3</a>, which you can try out on our <a href="https://peergos.net">server</a></p>
 <p>The most obvious change is that we've sped most things up by <em>~2.5X</em>, notably uploads and downloads. Our download speeds are now comparable to Dropbox, despite the extra overhead of decryption!</p>
-<p><center>
-<img alt="Faster downloads" class="class" id="id" src="/theme/img/cheetah.webp" width="50%" />
+<center>
+![Faster downloads](/theme/img/cheetah.webp){#id .class width=200px width=50%}
 <br/>
 2.5X faster downloads
-</center></p>
+</center>
 <p>The next big feature is <em>transaction-aware garbage collection</em>. This is critical to ensure our disks don't unnecessarily fill up.</p>
 <p>If you change 1 byte of a file bigger than 5 MiB, then we reencrypt that 5 MiB section of file. The new cipher text for this section has nothing in common with the old cipher text (otherwise it wouldn't be very good encryption!!). This means that now 5 MiB of blocks are unused and wasting space. Eventually, with enough modifications you'd fill up the disk with all this garbage.</p>
-<p><center>
-<img alt="Too much garbage" class="class" id="id" src="/theme/img/garbage.webp" width="50%" />
+<center>
+![Too much garbage](/theme/img/garbage.webp){#id .class width=200px width=50%}
 <br/>
 Too much garbage
-</center></p>
+</center>
 <p>The operation that cleans up these unreferenced blocks of data is called garbage collection. The difficult part is making sure we don't garbage collect data that someone is in the middle of writing (before they commit it). At the moment, this is achieved with a process wide lock. Once <a href="https://ipfs.io">IPFS</a> implements <a href="https://github.com/ipfs/notes/issues/106">native transactions</a> we can remove this global lock and get much better throughput.</p>
 <p>The next addition was <em>statically compiled native binaries</em>. Until now, to run Peergos yourself you had to independently install Java, which is ~100 MiB. This is an extra barrier that makes it harder to use, and which some people aren't willing to do. The native builds:</p>
 <ol>
@@ -178,96 +191,37 @@ Too much garbage
 <p>The last feature in particular enables us to have an interactive command line interface which doesn't require running a daemon. We'll be writing more about this soon! The only negative of native image builds is we don't yet have <a href="https://github.com/oracle/graal/issues/291">reproducible builds</a> for it.</p>
 <p>The final feature in this release is support for using an <em>S3 compatible</em> service for data storage instead of the local hard disk.</p>
 <p>As well as all these new features we've fixed a host of bugs in both the server and the client. So head on over to <a href="https://peergos.net">peergos.net</a> and check it out!</p>
-<h4>RECENT POSTS</h4>
-<ul id="recent-posts">
-    <li>
-      <a href="../posts/2025">2025 - What a year!</a>
-    </li>
-    <li>
-      <a href="../posts/decentralization">Decentralization Matters</a>
-    </li>
-    <li>
-      <a href="../posts/security-audit-2024">Security audit 2024</a>
-    </li>
-    <li>
-      <a href="../posts/blake3">Reasons to prefer blake3 over sha256</a>
-    </li>
-    <li>
-      <a href="../posts/a-better-web">A better web</a>
-    </li>
-    <li>
-      <a href="../posts/markdown-browser">Markdown browser</a>
-    </li>
-    <li>
-      <a href="../posts/bats">Release the BATs (block level access control in IPFS)</a>
-    </li>
-    <li>
-      <a href="../posts/email-bridge">Encrypted email storage and client</a>
-    </li>
-    <li>
-      <a href="../posts/decentralized-chat">Decentralized encrypted chat</a>
-    </li>
-    <li>
-      <a href="../posts/decentralized-social-media">Peergos launches decentralized & encrypted social media</a>
-    </li>
-    <li>
-      <a href="../posts/social-profile">Private and customizable profiles</a>
-    </li>
-    <li>
-      <a href="../posts/p2p-web-hosting">Simple decentralized web hosting on Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/calendar">Encrypted shareable calendar</a>
-    </li>
-    <li>
-      <a href="../posts/file-search">Fast Encrypted File Search</a>
-    </li>
-    <li>
-      <a href="../posts/private-kanban">Private Planning Boards in Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/the-social-dilemma">How to solve the social dilemma and fix social media</a>
-    </li>
-    <li>
-      <a href="../posts/next-generation-internet">Peergos wins EU Next Generation Internet grant</a>
-    </li>
-    <li>
-      <a href="../posts/direct-s3">Direct S3 access</a>
-    </li>
-    <li>
-      <a href="../posts/release-v0.3.0">Peergos release v0.3.0</a>
-    </li>
-    <li>
-      <a href="../posts/keybase-left-building">Keybase has left the building</a>
-    </li>
-    <li>
-      <a href="../posts/perfect-social-network">The perfect social network</a>
-    </li>
-    <li>
-      <a href="../posts/atomic-access-control">Atomic access control</a>
-    </li>
-    <li>
-      <a href="../posts/release-v0.1.3">Peergos release v0.1.3</a>
-    </li>
-    <li>
-      <a href="../posts/applications">Applications on Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/fast-seeking">Fast seeking and encrypted history</a>
-    </li>
-    <li>
-      <a href="../posts/ipfs-camp">IPFS Camp, new features</a>
-    </li>
-    <li>
-      <a href="../posts/alpha-release">Alpha Release</a>
-    </li>
-    <li>
-      <a href="../posts/security-audit">Security Audit</a>
-    </li>
-    <li>
-      <a href="../posts/dev-update">Development update</a>
-    </li>
-</ul>    </div>
+<div class="post-index more-posts">
+    <h2 class="post-year">More posts</h2>
+    <ul class="post-list">
+        <li>
+            <time datetime="2025-12-27">27 Dec 2025</time>
+            <a href="../posts/2025">2025 - What a year!</a>
+        </li>
+        <li>
+            <time datetime="2025-07-14">14 Jul 2025</time>
+            <a href="../posts/decentralization">Decentralization Matters</a>
+        </li>
+        <li>
+            <time datetime="2024-11-18">18 Nov 2024</time>
+            <a href="../posts/security-audit-2024">Security audit 2024</a>
+        </li>
+        <li>
+            <time datetime="2023-05-09">9 May 2023</time>
+            <a href="../posts/blake3">Reasons to prefer blake3 over sha256</a>
+        </li>
+        <li>
+            <time datetime="2022-08-02">2 Aug 2022</time>
+            <a href="../posts/a-better-web">A better web</a>
+        </li>
+        <li>
+            <time datetime="2022-04-08">8 Apr 2022</time>
+            <a href="../posts/markdown-browser">Markdown browser</a>
+        </li>
+    </ul>
+    <p><a href="../blog">Everything we have written</a></p>
+</div>
+    </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
                                            href="javascript:window.scrollTo(0,0);">Back to Top</a>
@@ -276,6 +230,7 @@ Too much garbage
     </div>
     </div>
     </div>
+</main>
     <div class="index">
 
 
@@ -283,11 +238,11 @@ Too much garbage
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -297,24 +252,27 @@ Too much garbage
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -322,8 +280,7 @@ Too much garbage
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>

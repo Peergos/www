@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>2025 - What a year!</title>
+    <title>2025 - What a year! | Peergos</title>
+    <meta name="description" content="Twenty releases in a year: Peergos 1.0, native desktop apps, an Android app, a new sync engine, easy server migration and post-quantum sharing.">
+    <link rel="canonical" href="https://peergos.org/posts/2025">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="2025 - What a year!">
+    <meta property="og:description" content="Twenty releases in a year: Peergos 1.0, native desktop apps, an Android app, a new sync engine, easy server migration and post-quantum sharing.">
+    <meta property="og:url" content="https://peergos.org/posts/2025">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li >
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li >
                     <a href="../download"
@@ -145,11 +157,12 @@
 
     </div>
 </nav>
+<main>
     <div class="container bs-docs-container">
     <div class="row">
-    <div class="col m3 col s4">
+    <div class="col m3 col s4 toc-column">
     </div>
-    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
     <h1 class="page-header main-title">2025 - What a year!</h1>
     <h3 class="main-title">Published: Sat 27 December 2025</h3>
     <div class="bs-docs-section">
@@ -175,7 +188,7 @@ Our biggest new feature this year was the sync engine, now available in the desk
 <li>Sync multiple devices to the same remote folder</li>
 <li>Choose whether deletes propagate (turning sync into a backup)</li>
 </ol>
-<p>It is efficient, so that if you have a big file synced and you modify a small section of it then it will only upload the modified chunk(s). To enable this and reduce bandwidth required in other situations we added some new encrypted metadata to files - a tree hash. For now this is a custom tree hash based on <a href="https://en.wikipedia.org/wiki/SHA-2">sha256</a>, in the future we will switch to <a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3">blake3</a> once browser support is better. This tree hash allows us to efficiently determine if a local and remote file are the same and also to detect which chunks changed between two versions of a file. </p>
+<p>It is efficient, so that if you have a big file synced and you modify a small section of it then it will only upload the modified chunk(s). To enable this and reduce bandwidth required in other situations we added some new encrypted metadata to files - a tree hash. For now this is a custom tree hash based on <a href="https://en.wikipedia.org/wiki/SHA-2">sha256</a>, in the future we will switch to <a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3">blake3</a> once browser support is better. This tree hash allows us to efficiently determine if a local and remote file are the same and also to detect which chunks changed between two versions of a file.</p>
 <p><img style="width:100%;" src="/theme/img/blog/sync.png"/>
 <b style="fonstize:16">Security by design</b><br/>
 The sync engine operates on a write capability limited to the synced folder. Even if a device is compromised, no other Peergos data is exposed.</p>
@@ -188,123 +201,64 @@ We released native installers for Windows, macOS and Linux:</p>
 <p><b style="fonstize:16">Android</b><br/>
 The Android app has been our most popular addition. You can <a href="https://peergos.org/download#android">install it</a> from Google play or side-loading. It supports the full user interface plus bi-directional sync. Next year we'll be integrating it with the native Android filesystem allowing you to send files directly between Peergos and other apps.</p>
 <p><b style="fonstize:16">Post quantum</b><br/>
-We've upgraded sharing in Peergos to use a hybrid key-exchange based on Curve25519 and <a href="https://en.wikipedia.org/wiki/Kyber">MLKEM-1024</a>. This means that anything you share in Peergos is safe against a <a href="https://en.wikipedia.org/wiki/Harvest_now%2C_decrypt_later"><em>harvest now, decrypt later</em></a> attack from a future large-scale quantum computer. </p>
+We've upgraded sharing in Peergos to use a hybrid key-exchange based on Curve25519 and <a href="https://en.wikipedia.org/wiki/Kyber">MLKEM-1024</a>. This means that anything you share in Peergos is safe against a <a href="https://en.wikipedia.org/wiki/Harvest_now%2C_decrypt_later"><em>harvest now, decrypt later</em></a> attack from a future large-scale quantum computer.</p>
 <p><b style="fonstize:16">50-150x Faster folder loading</b><br/>
 Previously, loading a folder in Peergos required listing all the child capabilities and then retrieving the metadata for each child before anything could be shown in the UI. We introduced a bulk champ.get call which allows us to retrieve up to 20 children in a single request. Then we added more metadata to the directory entries, specifically the mimetype, creation date and whether it is a directory. This means we can populate the UI as soon as we have listed the capabilities and update it with thumbnails and modification times asynchronously in the background. This last change made the UI about 100x faster on high latency connections. Now we can load a folder with 25,000 children from a server on another continent in 29s.</p>
-<p>We can still improve this further in the future by parallelising listing the directory capabilities, which currently need (number of children)/500 requests in series. By using the same <a href="/posts/fast-seeking">"stream-secret" technique</a> we use to enable zero I/O seeking within huge files we can make all those requests in parallel and thus only a single roundtrip to the server, regardless of directory size.</p>
+<p>We can still improve this further in the future by parallelising listing the directory capabilities, which currently need (number of children)/500 requests in series. By using the same <a href="/posts/fast-seeking">&quot;stream-secret&quot; technique</a> we use to enable zero I/O seeking within huge files we can make all those requests in parallel and thus only a single roundtrip to the server, regardless of directory size.</p>
 <p><b style="fonstize:16">Towards a CRDT</b><br/>
-We now have automatic concurrent modification handling in most circumstances. Previously, if you uploaded a file whilst editing a totally unrelated file, then saving the changes would result in a concurrent modification exception from the server. Now we handle these automatically if there isn't a genuine conflict, i.e. a concurrent change to the same file or dir. In the future we will also handle non conflicting changes to the same dir. The plan for files is to support <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> formats like <a href="https://automerge.org/">automerge</a> which can automatically merge in concurrent changes. </p>
+We now have automatic concurrent modification handling in most circumstances. Previously, if you uploaded a file whilst editing a totally unrelated file, then saving the changes would result in a concurrent modification exception from the server. Now we handle these automatically if there isn't a genuine conflict, i.e. a concurrent change to the same file or dir. In the future we will also handle non conflicting changes to the same dir. The plan for files is to support <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> formats like <a href="https://automerge.org/">automerge</a> which can automatically merge in concurrent changes.</p>
 <p><b style="fonstize:16">Shared page</b><br/>
 There is a new shared page available in the left sidebar which shows all the things you have shared with others, making permissions and visibility much easier to manage.
 <img style="width:100%;" src="/theme/img/blog/shared-page.png"/></p>
 <p><b style="fonstize:16">Built-in migration and mirroring support</b><br/>
 Peergos was designed from day one to avoid lock-in.</p>
 <p>Your identity, data and social graph are portable.</p>
-<p>This year we made it incredibly easy to mirror your data on another server or migrate to it. With a few clicks you can request or pay for space on another server to start mirroring your data or completely migrate there. </p>
+<p>This year we made it incredibly easy to mirror your data on another server or migrate to it. With a few clicks you can request or pay for space on another server to start mirroring your data or completely migrate there.</p>
 <p><b style="fonstize:16">Quic</b><br/>
-As part of a grant early in the year, we implemented the <a href="https://en.wikipedia.org/wiki/QUIC">quic</a> secure transport upstream in jvm-libp2p. This is now enabled in Peergos and improves reachability of nodes and also resolution and speed of the <a href="https://en.wikipedia.org/wiki/Distributed_hash_table">DHT</a>. </p>
+As part of a grant early in the year, we implemented the <a href="https://en.wikipedia.org/wiki/QUIC">quic</a> secure transport upstream in jvm-libp2p. This is now enabled in Peergos and improves reachability of nodes and also resolution and speed of the <a href="https://en.wikipedia.org/wiki/Distributed_hash_table">DHT</a>.</p>
 <p><b style="fonstize:16">P2P improvements</b><br/>
-We fixed some bugs in the p2p http request implementation which makes them much more reliable now. We have also removed all usage of <a href="https://docs.ipfs.tech/concepts/bitswap/">bitswap</a> for retrieving blocks - we just use a standard p2p http request. </p>
+We fixed some bugs in the p2p http request implementation which makes them much more reliable now. We have also removed all usage of <a href="https://docs.ipfs.tech/concepts/bitswap/">bitswap</a> for retrieving blocks - we just use a standard p2p http request.</p>
 <p><b style="fonstize:16">Server-side scalability</b><br/>
-We've done a lot of work on speed and scalability of garbage collection on large blockstores. Now a garbage collection on a 10 TiB remote S3 blockstore can run in under an hour. We are currently working on another huge speed up to this by segregating the blockstore by user. </p>
+We've done a lot of work on speed and scalability of garbage collection on large blockstores. Now a garbage collection on a 10 TiB remote S3 blockstore can run in under an hour. We are currently working on another huge speed up to this by segregating the blockstore by user.</p>
 <p><b style="fonstize:16">The rest</b><br/>
-We've added translation for French, Spanish and Polish. There have also been lots of fixes, new mimetype support and CLI improvements.  </p>
+We've added translation for French, Spanish and Polish. There have also been lots of fixes, new mimetype support and CLI improvements.</p>
 <p><b style="fonstize:16">Looking ahead</b><br/>
 2025 was about native apps, ecurity and performance.</p>
 <p>2026 will be about polish, usability, iOS and deeper OS integration, while staying true to our principles: privacy, portability and user control.</p>
 <p>If that resonates with you, <a href="https://peergos.net/?signup=true">create an account</a> or <a href="https://donorbox.org/peergos">support our work</a> and help shape what comes next.</p>
 <p>Here’s to an even better 2026.</p>
 <hr />
-<h4>RECENT POSTS</h4>
-<ul id="recent-posts">
-    <li>
-      <a href="../posts/2025">2025 - What a year!</a>
-    </li>
-    <li>
-      <a href="../posts/decentralization">Decentralization Matters</a>
-    </li>
-    <li>
-      <a href="../posts/security-audit-2024">Security audit 2024</a>
-    </li>
-    <li>
-      <a href="../posts/blake3">Reasons to prefer blake3 over sha256</a>
-    </li>
-    <li>
-      <a href="../posts/a-better-web">A better web</a>
-    </li>
-    <li>
-      <a href="../posts/markdown-browser">Markdown browser</a>
-    </li>
-    <li>
-      <a href="../posts/bats">Release the BATs (block level access control in IPFS)</a>
-    </li>
-    <li>
-      <a href="../posts/email-bridge">Encrypted email storage and client</a>
-    </li>
-    <li>
-      <a href="../posts/decentralized-chat">Decentralized encrypted chat</a>
-    </li>
-    <li>
-      <a href="../posts/decentralized-social-media">Peergos launches decentralized & encrypted social media</a>
-    </li>
-    <li>
-      <a href="../posts/social-profile">Private and customizable profiles</a>
-    </li>
-    <li>
-      <a href="../posts/p2p-web-hosting">Simple decentralized web hosting on Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/calendar">Encrypted shareable calendar</a>
-    </li>
-    <li>
-      <a href="../posts/file-search">Fast Encrypted File Search</a>
-    </li>
-    <li>
-      <a href="../posts/private-kanban">Private Planning Boards in Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/the-social-dilemma">How to solve the social dilemma and fix social media</a>
-    </li>
-    <li>
-      <a href="../posts/next-generation-internet">Peergos wins EU Next Generation Internet grant</a>
-    </li>
-    <li>
-      <a href="../posts/direct-s3">Direct S3 access</a>
-    </li>
-    <li>
-      <a href="../posts/release-v0.3.0">Peergos release v0.3.0</a>
-    </li>
-    <li>
-      <a href="../posts/keybase-left-building">Keybase has left the building</a>
-    </li>
-    <li>
-      <a href="../posts/perfect-social-network">The perfect social network</a>
-    </li>
-    <li>
-      <a href="../posts/atomic-access-control">Atomic access control</a>
-    </li>
-    <li>
-      <a href="../posts/release-v0.1.3">Peergos release v0.1.3</a>
-    </li>
-    <li>
-      <a href="../posts/applications">Applications on Peergos</a>
-    </li>
-    <li>
-      <a href="../posts/fast-seeking">Fast seeking and encrypted history</a>
-    </li>
-    <li>
-      <a href="../posts/ipfs-camp">IPFS Camp, new features</a>
-    </li>
-    <li>
-      <a href="../posts/alpha-release">Alpha Release</a>
-    </li>
-    <li>
-      <a href="../posts/security-audit">Security Audit</a>
-    </li>
-    <li>
-      <a href="../posts/dev-update">Development update</a>
-    </li>
-</ul>    </div>
+<div class="post-index more-posts">
+    <h2 class="post-year">More posts</h2>
+    <ul class="post-list">
+        <li>
+            <time datetime="2025-07-14">14 Jul 2025</time>
+            <a href="../posts/decentralization">Decentralization Matters</a>
+        </li>
+        <li>
+            <time datetime="2024-11-18">18 Nov 2024</time>
+            <a href="../posts/security-audit-2024">Security audit 2024</a>
+        </li>
+        <li>
+            <time datetime="2023-05-09">9 May 2023</time>
+            <a href="../posts/blake3">Reasons to prefer blake3 over sha256</a>
+        </li>
+        <li>
+            <time datetime="2022-08-02">2 Aug 2022</time>
+            <a href="../posts/a-better-web">A better web</a>
+        </li>
+        <li>
+            <time datetime="2022-04-08">8 Apr 2022</time>
+            <a href="../posts/markdown-browser">Markdown browser</a>
+        </li>
+        <li>
+            <time datetime="2022-01-25">25 Jan 2022</time>
+            <a href="../posts/bats">Release the BATs (block level access control in IPFS)</a>
+        </li>
+    </ul>
+    <p><a href="../blog">Everything we have written</a></p>
+</div>
+    </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
                                            href="javascript:window.scrollTo(0,0);">Back to Top</a>
@@ -313,6 +267,7 @@ We've added translation for French, Spanish and Polish. There have also been lot
     </div>
     </div>
     </div>
+</main>
     <div class="index">
 
 
@@ -320,11 +275,11 @@ We've added translation for French, Spanish and Polish. There have also been lot
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -334,24 +289,27 @@ We've added translation for French, Spanish and Polish. There have also been lot
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -359,8 +317,7 @@ We've added translation for French, Spanish and Polish. There have also been lot
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>

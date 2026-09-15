@@ -48,13 +48,6 @@ nav a {
     background-color: #425365;
 }
 
-.hero {
-    text-align: center;
-    width: 100%;
-    padding: 30px 30px 0px 30px;
-    position: relative;
-}
-
 @media (min-width: 1400px) {
     .hero {
         height: 600px;
@@ -83,151 +76,35 @@ nav a {
     }
 }
 
-.hero h3 {
-    font-size: 1.6em;
-    font-weight: bolder;
-}
-
-.hero p {
-    font-size: 1.3em;
-    color: #26b99a;
-    width: 80%;
-    margin: 0 auto;
-    padding: 30px;
-}
-
 footer.page-footer {
     background-color: #2c3e50;
 }
 
 footer a {
-    color: #26b99a !important;
+    /* the lighter green is 6.2:1 on the footer slate, where #26b99a is 4.4:1 */
+    color: #3fdb9c !important;
 }
 
 .center-align {
     text-align: center;
 }
 
-.home-features {
-    padding: 10px;
-    background-color: #2c3e50;
-    color: white;
-}
-
-.home-features .col {
-    padding: 30px;
-}
-
-.home-features a {
-    color: #26b99a;
-}
-
-.home-features h4 {
-    font-size: 1.3em;
-    color: #26b99a;
-}
-
-.get-it {
-    padding: 1.5em 0;
-    background-color: #26b99a;
-    color: #2c3e50;
-}
-
-.get-it h4 {
-    font-size: 1.4em;
-    font-weight: bolder;
-}
-
-.get-it h5 {
-    font-size: 1.3em;
-    padding-bottom: 20px;
-}
-
-.get-it input[type=text] {
-    background-color: #209e84;
-    padding: 5px 10px;
-    color: #2c3e50;
-    border: none;
-    border-radius: 4px;
-}
-
 @media (max-width: 700px) {
     .row .col.s8 {
 	width: 100%;
-	text-align: center;
     }
-}
 
-.feature-dark {
-    text-align: center;
-    background-color: #2c3e50;
-    color: white;
-    width: 100%;
-}
-
-.feature-dark input[type=text] {
-    background-color: #209e84;
-    padding: 5px 10px;
-    color: #2c3e50;
-    border: none;
-    border-radius: 4px;
-}
-
-.feature-dark .col {
-    padding: 30px;
+    /* The contents list is a sidebar; on a phone it is just a wall of links
+       above the page it belongs to. */
+    .toc-column {
+	display: none;
+    }
 }
 @media (max-width: 700px) {
     .feature-dark .col {
 	width: 100%;
 	text-align: center;
     }
-}
-
-.feature-dark a {
-    color: #26b99a;
-}
-
-.feature-dark h2 {
-    font-size: 3em;
-    color: #26b99a;
-}
-
-.feature-dark p {
-    font-size: 1.3em;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.feature-light {
-    text-align: center;
-    color: #2c3e50;
-    background-color: white;
-    width: 100%;
-}
-
-.feature-light input[type=text] {
-    background-color: #209e84;
-    padding: 5px 10px;
-    color: #2c3e50;
-    border: none;
-    border-radius: 4px;
-}
-
-.feature-light .col {
-    padding: 30px;
-}
-
-.feature-light a {
-    color: #26b99a;
-}
-
-.feature-light h2 {
-    font-size: 3em;
-}
-
-.feature-light h2 bottom {
-	text-align: right;
 }
 
 @media (max-width: 700px) {
@@ -239,32 +116,10 @@ footer a {
     }
 }
 
-.feature-light top h2 {
-    text-align: right;
-}
-
 @media (min-width: 700px) {
     .feature-light .top {
 	display: none;
     }
-}
-
-.feature-dark ul {
-  list-style-type: circle;
-}
-
-.feature-dark ul li {
-    padding: 10px;
-    text-align: left;
-    font-size: 1.3em;
-}
-
-.feature-light p {
-    text-align: center;
-    font-size: 1.3em;
-    width: 80%;
-    margin: 0 auto;
-    padding: 10px;
 }
 
 .side-nav {
@@ -290,9 +145,713 @@ footer a {
     text-align: center;
 }
 
-#particles {
+/* Features page: five groups of short entries, each with a screenshot. */
+.features .bs-docs-section h2 {
+    font-size: 2.1em;
+    color: #2c3e50;
+    margin: 2.2em 0 0.1em 0;
+}
+
+.features .bs-docs-section h2:first-of-type {
+    margin-top: 0.6em;
+}
+
+.features .bs-docs-section h2 + p {
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 1.2em;
+}
+
+.features .bs-docs-section h3 {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: #2c3e50;
+    border-left: 3px solid #26b99a;
+    padding-left: 0.7em;
+    margin: 1.8em 0 0.4em 0;
+}
+
+.features .bs-docs-section p {
+    max-width: 68ch;
+}
+
+.features .shot {
+    display: block;
+    margin: 1.4em 0 0.4em 0;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-shadow: 0 2px 14px rgba(44, 62, 80, 0.13);
+}
+
+/* What a server can see, ours against everyone else's. */
+table.sees {
+    margin: 1.6em 0 2.4em 0;
+    max-width: 40em;
+}
+
+table.sees th {
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #2c3e50;
+}
+
+table.sees th:nth-child(2) {
+    color: #26b99a;
+}
+
+table.sees td:nth-child(2) {
+    color: #26b99a;
+    font-weight: 600;
+}
+
+table.sees td:nth-child(3) {
+    color: #566571;
+}
+
+.page-cta {
+    margin-top: 3.5em;
+    padding-top: 1.8em;
+    border-top: 2px solid #e1e1e1;
+}
+
+.page-cta p {
+    padding-top: 1em;
+}
+
+/* Outline button, used on the home page and the self-host plan. */
+.btn-outline {
+    display: inline-block;
+    border: 2px solid #26b99a;
+    border-radius: 2px;
+    color: #26b99a;
+    background-color: transparent;
+    padding: 0 1.6rem;
+    height: 36px;
+    line-height: 32px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: #26b99a;
+    color: #fff;
+}
+
+/* Pricing: four plans, one of which is running it yourself. */
+.pricing-page {
+    padding-bottom: 3em;
+}
+
+.pricing-page .lead {
+    font-size: 1.25em;
+    margin: 0.6em 0 1.6em 0;
+}
+
+.pricing-page blockquote.why {
+    border-left: 4px solid #26b99a;
+    margin: 0 0 2.4em 0;
+    padding: 0.2em 0 0.2em 1.2em;
+    font-size: 1.15em;
+    color: #2c3e50;
+    max-width: 46em;
+}
+
+.pricing-page .button-group-container {
+    justify-content: flex-start;
+}
+
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.plan {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 26px 22px 24px 22px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan.selfhost {
+    border: 1px dashed #8a949d;
+    background-color: #fbfbfb;
+}
+
+.plans .plan h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.plan .storage {
+    color: #566571;
+    margin: 0.2em 0 0.9em 0;
+}
+
+.plan .price {
+    font-size: 2.6em;
+    line-height: 1;
+    color: #26b99a;
+    margin: 0;
+}
+
+.plan .per {
+    color: #566571;
+    margin: 0.2em 0 1.4em 0;
+    flex-grow: 1;
+}
+
+.plan .btn,
+.plan .btn-outline {
+    width: 100%;
+    text-align: center;
+}
+
+.billing-note {
+    color: #566571;
+    margin: 1.2em 0 0 0;
+}
+
+.pricing-page h2 {
+    font-size: 1.9em;
+    color: #2c3e50;
+    margin: 2.4em 0 0.8em 0;
+}
+
+.pricing-page h3.question {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #2c3e50;
+    border-left: 3px solid #26b99a;
+    padding-left: 0.7em;
+    margin: 1.6em 0 0.4em 0;
+}
+
+.pricing-page p {
+    max-width: 66ch;
+}
+
+.included {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0 40px;
+}
+
+.included ul {
+    margin: 0;
+}
+
+.included li {
+    padding: 4px 0 4px 1.4em;
+    position: relative;
+}
+
+.included li:before {
+    content: "";
     position: absolute;
-    z-index: -1;
-    height: 100%;
-    width: 90%;
+    left: 0;
+    top: 0.85em;
+    width: 8px;
+    height: 8px;
+    background-color: #26b99a;
+    border-radius: 1px;
+}
+
+.smallprint {
+    margin-top: 2.6em;
+    color: #566571;
+}
+
+/* Download: the visitor's own platform first, the rest in a row below. */
+.download-page {
+    padding-bottom: 3em;
+}
+
+.download-page .lead {
+    font-size: 1.25em;
+    margin: 0.6em 0 1.6em 0;
+    max-width: 62ch;
+}
+
+.detected {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 2.6em;
+    padding: 20px 22px;
+    border-left: 4px solid #26b99a;
+    background-color: #f6f6f6;
+}
+
+.detected-note {
+    color: #566571;
+}
+
+.platforms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.platform {
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.platforms .platform h2:first-child {
+    margin-top: 0;
+}
+
+.platform .play {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.platform .play img {
+    width: 100%;
+    max-width: 210px;
+    border-radius: 3px;
+}
+
+.platforms .platform h2 {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 0.3em 0;
+}
+
+.platform p {
+    margin: 0 0 1em 0;
+}
+
+.platform .btn,
+.platform .btn-outline {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.platform pre {
+    background-color: #f6f6f6;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 0.78em;
+    margin: 0 0 1em 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.platform .note {
+    color: #566571;
+    font-size: 0.92em;
+    margin: 0;
+    padding-top: 0.6em;
+}
+
+.download-page h2 {
+    font-size: 1.9em;
+    color: #2c3e50;
+    margin: 2.6em 0 0.8em 0;
+}
+
+.download-page > pre {
+    background-color: #f6f6f6;
+    padding: 14px;
+    border-radius: 3px;
+    overflow-x: auto;
+    max-width: 60ch;
+}
+
+.download-page p {
+    max-width: 66ch;
+}
+
+/* Home page. Full width bands, each a different shape, all left aligned. */
+.inner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 64px 24px 72px 24px;
+}
+
+.hero-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: 56px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3.1em;
+    line-height: 1.12;
+    color: #2c3e50;
+    margin: 0 0 0.55em 0;
+}
+
+.hero-sub {
+    font-size: 1.25em;
+    color: #566571;
+    max-width: 36ch;
+    margin: 0;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 2em 0 1.2em 0;
+}
+
+.hero-note {
+    color: #566571;
+    max-width: 44ch;
+    margin: 0;
+}
+
+.hero-shot img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    box-shadow: 0 10px 44px rgba(44, 62, 80, 0.18);
+}
+
+.stats {
+    background-color: #f6f6f6;
+    padding: 36px 24px;
+}
+
+.stats .inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 28px;
+}
+
+.stat {
+    color: #566571;
+    max-width: 26ch;
+}
+
+.stat .figure {
+    display: block;
+    font-size: 2.5em;
+    line-height: 1;
+    color: #26b99a;
+    margin-bottom: 0.18em;
+}
+
+.band {
+    padding: 72px 24px;
+}
+
+.band-dark {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.band h2 {
+    font-size: 2.3em;
+    color: #2c3e50;
+    margin: 0 0 0.5em 0;
+}
+
+.band-dark h2 {
+    color: #3fdb9c;
+}
+
+.band p {
+    font-size: 1.12em;
+    max-width: 58ch;
+}
+
+.band-dark a {
+    color: #3fdb9c;
+}
+
+.band-dark .btn-outline {
+    border-color: #3fdb9c;
+    color: #3fdb9c;
+}
+
+.band-dark .btn-outline:hover {
+    background-color: #3fdb9c;
+    color: #2c3e50;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 52px;
+    align-items: center;
+}
+
+.shot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 32px rgba(0, 0, 0, 0.22);
+}
+
+.band-dark table.sees th {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+.band-dark table.sees th:nth-child(2) {
+    color: #3fdb9c;
+}
+
+.band-dark table.sees td:nth-child(2) {
+    color: #3fdb9c;
+}
+
+.band-dark table.sees td:nth-child(3) {
+    color: #b6bcc1;
+}
+
+.tour .inner h2,
+.tour .tour-lead {
+    max-width: 58ch;
+}
+
+.tour-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 1.8em 0 1.5em 0;
+}
+
+.tour-tab {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 2px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95em;
+    padding: 7px 16px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.tour-tab:hover {
+    border-color: #3fdb9c;
+}
+
+.tour-tab.is-active {
+    background-color: #3fdb9c;
+    border-color: #3fdb9c;
+    color: #2c3e50;
+    font-weight: 600;
+    cursor: default;
+}
+
+.tour .shot-frame {
+    max-width: 900px;
+}
+
+.tour-caption {
+    color: #b6bcc1;
+    margin-top: 1em;
+}
+
+.quotes blockquote {
+    border-left: 3px solid #3fdb9c;
+    margin: 0 0 1.8em 0;
+    padding: 0 0 0 1.1em;
+    font-size: 1.1em;
+}
+
+.quotes cite {
+    display: block;
+    margin-top: 0.7em;
+    font-style: normal;
+    font-size: 0.82em;
+    color: #b6bcc1;
+}
+
+.supporters {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    flex-wrap: wrap;
+    margin-top: 3.4em;
+    padding-top: 2.2em;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.supporters span {
+    color: #b6bcc1;
+    font-size: 0.9em;
+}
+
+.supporters img {
+    height: 40px;
+    width: auto;
+    opacity: 0.85;
+}
+
+.closing {
+    padding: 72px 24px;
+}
+
+.closing h2 {
+    font-size: 2.3em;
+    color: #2c3e50;
+    margin: 0 0 0.8em 0;
+}
+
+.closing p {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .hero-inner {
+	grid-template-columns: 1fr;
+	gap: 36px;
+    }
+
+    .hero h1 {
+	font-size: 2.4em;
+    }
+}
+
+/* Blog index: every post by year, with the first line of each. */
+.blog .toc-column {
+    display: none;
+}
+
+.blog .col.m9 {
+    width: 100%;
+}
+
+.blog .bs-docs-section > p {
+    max-width: 62ch;
+    font-size: 1.12em;
+}
+
+.blog-lines {
+    color: #566571;
+}
+
+.post-index {
+    margin-top: 2.6em;
+}
+
+.post-year {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #566571;
+    letter-spacing: 0.06em;
+    margin: 2.4em 0 0.6em 0;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.post-list li {
+    display: grid;
+    grid-template-columns: 5.5em minmax(0, 1fr);
+    gap: 0 1.4em;
+    padding: 0.9em 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.post-list time {
+    color: #566571;
+    font-size: 0.92em;
+    padding-top: 0.15em;
+}
+
+.post-list a {
+    font-size: 1.15em;
+    font-weight: 600;
+}
+
+/* the short list at the foot of a post carries the year too, so it needs more room */
+.more-posts .post-list li {
+    grid-template-columns: 7.5em minmax(0, 1fr);
+}
+
+.more-posts p {
+    margin-top: 1.4em;
+}
+
+.post-excerpt {
+    grid-column: 2;
+    color: #566571;
+    max-width: 72ch;
+    margin-top: 0.2em;
+}
+
+@media (max-width: 700px) {
+    .post-list li {
+	grid-template-columns: 1fr;
+	gap: 0.2em;
+    }
+
+    .post-excerpt {
+	grid-column: 1;
+    }
+}
+
+/* Text only a screen reader needs, e.g. the empty corner of a comparison table. */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.footer-heading {
+    font-size: 1.4em;
+    margin: 0.8em 0 0.5em 0;
+}
+
+/* A link in a sentence is underlined: colour alone does not separate it from the
+   text around it, whatever the palette. Buttons and lists of links are exempt. */
+.band p a,
+.hero-note a,
+.blog-lines a,
+.pricing-page p a,
+.download-page p a,
+.bs-docs-section p a,
+.more-posts p a {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
+.band p a.btn,
+.band p a.btn-outline,
+.closing p a {
+    text-decoration: none;
 }

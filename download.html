@@ -1,16 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Download</title>
+    <title>Download | Peergos</title>
+    <meta name="description" content="Peergos for Windows, macOS, Linux and Android. Folder sync on every platform, and a drive you can mount natively on Windows, Linux and Android.">
+    <link rel="canonical" href="https://peergos.org/download">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Peergos">
+    <meta property="og:title" content="Download">
+    <meta property="og:description" content="Peergos for Windows, macOS, Linux and Android. Folder sync on every platform, and a drive you can mount natively on Windows, Linux and Android.">
+    <meta property="og:url" content="https://peergos.org/download">
+    <meta property="og:image" content="https://peergos.org/theme/img/social-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Peergos: control your data, control your destiny">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="shortcut icon" href="/theme/vendor/peergos-styles/dist/img/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="/theme/img/favicon.ico"/>
     <link rel="stylesheet" href="/theme/css/material-icons.css">
-    <link rel="stylesheet" href="/theme/css/luna-carousel.css">
     <script src="/theme/js/toggle.js" defer></script>
     <script src="/theme/js/slider.js" defer></script>
     <link rel="stylesheet" href="/theme/css/style.css">
@@ -27,7 +39,7 @@
     <div class="nav-wrapper">
 
 
-        <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-main.svg" width="200"/></a>
+        <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-main.svg" width="200" alt="Peergos"/></a>
         <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                     <li class="active">
@@ -88,7 +100,7 @@
 
         <ul class="side-nav" id="mobile">
             <li class="side-nav-header">
-                <a href="/" class="brand-logo"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180"/></a>
+                <a href="/" class="brand-logo" aria-label="Peergos home"><img src="/theme/img/peergos/logo-tower-only-green.svg" width="180" alt="Peergos"/></a>
             </li>
                 <li class="active">
                     <a href="./download"
@@ -145,112 +157,97 @@
 
     </div>
 </nav>
-    <div class="container bs-docs-container">
-    <div class="row">
-    <div class="col m3 col s4">
-    </div>
-    <div class="col m9 col s8" role="main" style="overflow-x:auto; padding-bottom: 10px;">
-    <h1 class="page-header main-title">Download</h1>
+<main>
     <div class="bs-docs-section">
-    <style>
-details { cursor: pointer; }
-
-summary {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-left: 2em;
-}
-
-summary::before {
-    content: '▶';
-    position: absolute;
-    left: 0;
-    transition: transform 0.3s ease;
-    font-size: 1.2rem;
-    color: #3fdb9c;
-}
-
-details[open] summary::before {
-     content: '▼';
-    color: #3fdb9c;
-}
-
-details {
-    border: 1px solid #26b99a;
-    border-radius: 0.2rem;
-    padding: 0.5rem;
-}
-
-details[open] > summary {
-    margin-bottom: 0.5rem;
-}
-
-details::marker {
-  color: #26b99a;
-  font-size: 2rem;
-}
-</style>
-
-<details>
-<summary><h2>Android app</h2></summary>
-
-<div id="android" style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
-<div>
-<a href="https://play.google.com/store/apps/details?id=peergos.android"><img src="theme/img/download/Google-Play.jpg" alt="From Google Play" style="height:100px"/></a>
+    <div class="container download-page">
+<h1 class="page-header main-title">Download</h1>
+<p class="lead">Peergos runs in any browser at <a href="https://peergos.net">peergos.net</a>.
+The apps add folder sync, calendar and contact sync, a drive you can mount like
+any other, and hardware security keys. Version 1.33.0.</p>
+<div id="detected" class="detected" hidden>
+<a id="detected-link" class="btn" href="#platforms"><span id="detected-label">DOWNLOAD</span></a>
+<span class="detected-note" id="detected-note"></span>
 </div>
-<div style="padding:20px">
-or
+<div class="platforms" id="platforms">
+<section class="platform" id="windows">
+<h2>Windows</h2>
+<p>64-bit, Windows 10 and 11.</p>
+<a class="btn" href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-windows-amd64.msi"><span>MSI INSTALLER</span></a>
+<p class="note">Sync, native drive mount, WebDAV, CalDAV and CardDAV, tray icon,
+Windows Hello and security keys.</p>
+</section>
+<section class="platform" id="macos">
+<h2>macOS</h2>
+<p>Choose the one that matches your processor.</p>
+<a class="btn" href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-macos-aarch64.pkg"><span>APPLE SILICON</span></a>
+<a class="btn-outline" href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-macos-amd64.pkg">INTEL</a>
+<p class="note">Sync and security keys. Mounting the drive and the CalDAV and
+CardDAV bridges have not landed on macOS yet.</p>
+</section>
+<section class="platform" id="linux">
+<h2>Linux</h2>
+<p>Through Flatpak, on any distribution.</p>
+<pre><code>flatpak remote-add --if-not-exists peergos https://flatpak.peergos.org/peergos.flatpakrepo
+flatpak install peergos org.peergos.Peergos</code></pre>
+<p class="note">Codecs and the folder picker need one package each.
+<a href="https://flatpak.peergos.org">Full instructions, and how to fix video
+playback and security keys</a>.</p>
+</section>
+<section class="platform" id="android">
+<h2>Android</h2>
+<p>The whole interface, plus two way sync and a native mount.</p>
+<a class="play" href="https://play.google.com/store/apps/details?id=peergos.android"><img src="/theme/img/download/Google-Play.jpg" alt="Get it on Google Play"></a>
+<a class="btn-outline" href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos.apk">APK</a>
+<p class="note">Calendars and contacts sync into the phone's own apps, both
+ways. Folder sync uses the Storage Access Framework, so it never asks for
+permission to read your whole device.</p>
+</section>
 </div>
-<div>
-<a href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos.apk"><img src="theme/img/download/android-apk.webp" alt="Download APK" style="height:100px"/></a>
-<div>
-Android releases can be verified with this sha256 of the signing certificate: <br/>
-2c5b6153 7d0b18c8 e858ccf3 f485a8b0 fa3450b6 17c6211d 18507778 1f26f030
-<br/>
-Use this command: apksigner verify --print-certs <path_to_apk>
+<h2>Checking what you downloaded</h2>
+<p>Android releases are signed with a certificate whose SHA-256 is</p>
+<pre tabindex="0"><code>2c5b6153 7d0b18c8 e858ccf3 f485a8b0 fa3450b6 17c6211d 18507778 1f26f030</code></pre>
+<p>Check an APK against it with <code>apksigner verify --print-certs &lt;path to apk&gt;</code>.</p>
+<h2>Or build it yourself</h2>
+<p>Every one of these is built from <a href="https://github.com/Peergos/Peergos">the
+same source you can read</a>, and the server is in there too, so you can skip all
+of the above and <a href="https://book.peergos.org/features/self.html">run your
+own</a>.</p>
+<p>The builds are reproducible. Build the same commit yourself and you get the
+same artefact we published, so you do not have to take our word for what is in
+the download. That is also why
+<a href="https://github.com/Peergos/web-ui#building">the build avoids npm and
+friends</a>: everything is vendored, and a JVM is the only thing you need.</p>
 </div>
-</div>
-</div>
-</details>
-
-<h2><b>Desktop apps</b></h2>
-
-<details>
-<summary><h2>Windows</h2></summary>
-
-<div id="windows">
-<a href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-windows-amd64.msi"><img src="theme/img/download/windows-11.png" alt="Windows 11" style="height:100px"/></a>
-</div>
-</details>
-
-<details>
-<summary><h2>MacOS</h2></summary>
-
-<div style="display:flex; flex-direction:row; flex-wrap:wrap; align-items:center;">
-<div id="macos">
-<a href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-macos-aarch64.pkg"><img src="theme/img/download/mac-osx.jpg" alt="MacOS, ARM CPU" style="height:150px"/></a>
-</div>
-<div>
-<a href="https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-macos-amd64.pkg"><img src="theme/img/download/mac-osx-intel.jpg" alt="MacOS, Intel CPU" style="height:150px"/></a>
-</div>
-</div>
-</details>
-
-<details>
-<summary><h2>Linux</h2></summary>
-<h5>Flatpak</h5>
-Follow the instructions in our Flatpak repository, <a href="https://flatpak.peergos.org">https://flatpak.peergos.org</a>
+<script>
+// Lead with the platform the visitor is on; everything stays visible below.
+(function () {
+    var ua = navigator.userAgent;
+    var platforms = [
+        {test: /Android/i, name: "Android", label: "GET IT ON GOOGLE PLAY",
+         href: "https://play.google.com/store/apps/details?id=peergos.android",
+         note: "Or the APK below."},
+        {test: /Windows/i, name: "Windows", label: "DOWNLOAD FOR WINDOWS",
+         href: "https://github.com/Peergos/web-ui/releases/download/v1.33.0/peergos-1.33.0-windows-amd64.msi",
+         note: "Installer, version 1.33.0."},
+        {test: /Mac OS X|Macintosh/i, name: "macOS", label: "DOWNLOAD FOR MACOS",
+         href: "#macos", note: "Apple silicon or Intel, below."},
+        {test: /Linux|X11/i, name: "Linux", label: "INSTALL ON LINUX",
+         href: "#linux", note: "Two commands, below."}
+    ];
+    for (var i = 0; i < platforms.length; i++) {
+        if (!platforms[i].test.test(ua))
+            continue;
+        var link = document.getElementById("detected-link");
+        link.href = platforms[i].href;
+        document.getElementById("detected-label").textContent = platforms[i].label;
+        document.getElementById("detected-note").textContent = platforms[i].note;
+        document.getElementById("detected").hidden = false;
+        return;
+    }
+})();
+</script>
     </div>
-    <span class="pull-right">
-                                        <a class="btn btn-default" role="button"
-                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
-                                </span>
-
-    </div>
-    </div>
-    </div>
+</main>
     <div class="index">
 
 
@@ -258,11 +255,11 @@ Follow the instructions in our Flatpak repository, <a href="https://flatpak.peer
     <div class="">
         <div class="row">
             <div class="col l6 m6 s12 footer-logo">
-                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230">
+                <img src="/theme/img/peergos/logo-dark-bg.svg" width="230" alt="Peergos">
             </div>
 
             <div class="col l3 m4 s12">
-                <h5 class="white-text">About Us</h5>
+                <h2 class="footer-heading white-text">About Us</h2>
                 <ul>
                     <li><a href="https://book.peergos.org/" target="_new">Tech book</a></li>
                     <li><a href="/about" >About</a></li>
@@ -272,24 +269,27 @@ Follow the instructions in our Flatpak repository, <a href="https://flatpak.peer
             </div>
 
             <div class="col l3 m3 s12">
-                <h5 class="white-text">Community</h5>
+                <h2 class="footer-heading white-text">Community</h2>
                 <ul>
                     <!--<li><a href="http://blog.peergos.org" target="_new">Blog</a></li>-->
-                    <a href="https://github.com/peergos/peergos" target="_new">
-                      <img src="/theme/img/contact/github.svg" width="100">
-                    </a>
-                    <a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
-                      <img src="/theme/img/contact/matrix.png" width="100">
-                    </a>
-                    <a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;">
-                    </a>
-                    <a href="https://twitter.com/peergos" target="_new">
-                    <img src="/theme/img/contact/twitter.svg" width="100">
-                    </a>
-                    <a href="https://reddit.com/r/peergos" target="_new">
-                    <img src="/theme/img/contact/reddit.png" width="100">
-                    </a>
+                    <li><a href="https://github.com/peergos/peergos" target="_new">
+                      <img src="/theme/img/contact/github.svg" width="100" alt="Peergos on GitHub">
+                    </a></li>
+                    <li><a href="https://matrix.to/#/#peergos-chat:matrix.org" target="_new">
+                      <img src="/theme/img/contact/matrix.png" width="100" alt="The Peergos Matrix room">
+                    </a></li>
+                    <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    </a></li>
+                    <li><a href="https://bsky.app/profile/peergos.org" target="_new">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    </a></li>
+                    <li><a href="https://twitter.com/peergos" target="_new">
+                    <img src="/theme/img/contact/twitter.svg" width="100" alt="Peergos on Twitter">
+                    </a></li>
+                    <li><a href="https://reddit.com/r/peergos" target="_new">
+                    <img src="/theme/img/contact/reddit.png" width="100" alt="Peergos on Reddit">
+                    </a></li>
                 </ul>
             </div>
         </div>
@@ -297,8 +297,7 @@ Follow the instructions in our Flatpak repository, <a href="https://flatpak.peer
         <div class="footer-copyright">
             <div class="row">
                 <div class="col s12">
-                    © PEERGOS | Designed by <a href="http://www.antarctic-design.co.uk" target="_blank"> Eamonn
-                    Maguire</a>.
+                    © PEERGOS
                 </div>
 
             </div>
