@@ -163,28 +163,28 @@
     <div class="bs-docs-section">
     <p>We're pleased to announce the latest feature built as part of our NGI grant: decentralized encrypted chat. Why build yet another chat protocol, you ask? Our implementation of chat is an application inside Peergos, i.e. it benefits from all the privacy guarantees and access control without having to re-implement all of it.</p>
 <p>First, let’s see how it looks.</p>
-<center>
-![chat](/theme/img/blog/chat.webp){#id .class width=500px}
+<p><center>
+<img src="/theme/img/blog/chat.webp" alt="chat" id="id" class="class" width="500px" />
 <br/>
 Decentralized encrypted chat.
-</center>
+</center></p>
 <p>The user interface is fairly familiar. However, one difference to most messengers is that it is built to respect you and your attention: no notifications and no nagging pop ups to &quot;install our native app where we can track you more&quot;. You can only chat with your friends on Peergos. No unwanted messages - you have to accept someone as a friend before they request a chat with you. All you need to start a chat with a friend is their username - unlike some messengers that demand your phone number, and require you to share it with those you chat with.</p>
 <p>You can do all the usual things: textual messages, images, videos, emoji. The app allows one-to-one chats and group chats. Group chats can have any number of members and any number of admins; admins can grant and revoke admin status to others. Your Peergos server doesn't even know you're sending chat messages, because these are just regular files in your Peergos space.</p>
-<center>
-![group chat](/theme/img/blog/group-chat.webp){#id .class width=500px}
+<p><center>
+<img src="/theme/img/blog/group-chat.webp" alt="group chat" id="id" class="class" width="500px" />
 <br/>
 Group chat.
-</center>
+</center></p>
 <p>Under the hood, each chat stores its messages as an append-only file in Peergos. Messages are not pushed to other recipients - to send a message, you simply append it to your own copy of the chat log. Other members will then pull the message and copy it into their log the next time they open the app – messages propagate peer-to-peer, from member to member. The messages themselves form a merkle dag with each message containing a merkle link to previous messages. With this structure, we are able to maintain causal order. That means you only see a reply to a message after seeing the message it is replying to. In group chats, when a member leaves, or is removed from a chat, then their access to the chat is revoked, preventing them from seeing any future messages.</p>
 <p>Want to try it out already? To enable the chat app, simply login or create an account at <a href="https://peergos.net/?chat=true">https://peergos.net/?chat=true</a> - note the &quot;?chat=true&quot; in the URL. We will enable chat by default once the UX is more polished.</p>
 <p>This work was built as part of our <a href="/posts/next-generation-internet">grant</a> from the Next Generation Internet program (<a href="https://pointer.ngi.eu/">NGI POINTER</a>).</p>
 <p><br/><br/></p>
 <hr />
-<center>
-![NGI Pointer](/theme/img/ngi-logo.png){#id .class height=65px}
-![NGI Pointer](/theme/img/eu.png){#id .class height=65}
+<p><center>
+<img src="/theme/img/ngi-logo.png" alt="NGI Pointer" id="id" class="class" height="65px" />
+<img src="/theme/img/eu.png" alt="NGI Pointer" id="id" class="class" height="65" />
 </center>
-<p><br/>
+<br/>
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme within the framework of the NGI-POINTER Project funded under grant agreement No 871528</p>
 <p><br/><br/><br/></p>
 <div class="post-index more-posts">

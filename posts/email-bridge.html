@@ -162,27 +162,27 @@
     <h3 class="main-title">Published: Sat 20 November 2021</h3>
     <div class="bs-docs-section">
     <p>We're pleased to announce the latest feature built as part of our NGI grant - an email bridge. The email bridge is a separate server that can run anywhere. It will encrypt incoming emails and store them in your Peergos space, as well as sending outgoing emails, which you create from the web interface. All it needs is the SMTP and IMAP credentials to your email, and write-access to a particular folder in your Peergos space. This is what the web client looks like:</p>
-<center>
-![email](/theme/img/blog/email-inbox.png){#id .class width=500px}
+<p><center>
+<img src="/theme/img/blog/email-inbox.png" alt="email" id="id" class="class" width="500px" />
 <br/>
 Peergos email client.
-</center>
+</center></p>
 <p>When your email bridge receives an incoming email, it will asymmetrically encrypt the email and any attachments (so even the bridge can't read it) and store it in a folder in your Peergos space. When you next login, you decrypt the email and any attachments, and store them in a private folder the bridge doesn't have access to. In the other direction, you can create a new email which is stored in a file in your Peergos space. The bridge picks this up, sends it as a real email, and deletes the file from the Peergos outbox folder (you keep a private copy that the bridge can't read). It's designed in a way that there is no state stored in the bridge; therefore even if it is temporarily compromised, no emails are exposed other than those sent or received during the time of the hacking.</p>
 <p>You can run the bridge anywhere, it doesn't need a domain name or any TLS certs, just your smtp and imap credentials, and write-access to a folder in your Peergos space. To achieve the latter easily, create a new Peergos user just for the email bridge. Then you can friend and share with this user naturally using the existing Peergos interface.</p>
-<center>
-![email](/theme/img/blog/email-send.png){#id .class width=500px}
+<p><center>
+<img src="/theme/img/blog/email-send.png" alt="email" id="id" class="class" width="500px" />
 <br/>
 Compose an email in Peergos.
-</center>
+</center></p>
 <p>Want to try it out already? You'll first need to run your own email bridge and create a Peergos account for the bridge. Then to enable the email client in Peergos, login or create an account at <a href="https://peergos.net/?email=true">https://peergos.net/?email=true</a> - note the &quot;?email=true&quot; in the URL. Then login and open the email client in Peergos, and put in the username of the email-bridge. Then login as the email bridge user and accept and reciprocate the follow request from your user. Add your username to the email-bridge accounts file to allow sending/receiving emails.</p>
 <p>This work was built as part of our <a href="/posts/next-generation-internet">grant</a> from the Next Generation Internet program (<a href="https://pointer.ngi.eu/">NGI POINTER</a>).</p>
 <p><br/><br/></p>
 <hr />
-<center>
-![NGI Pointer](/theme/img/ngi-logo.png){#id .class height=65px}
-![NGI Pointer](/theme/img/eu.png){#id .class height=65}
+<p><center>
+<img src="/theme/img/ngi-logo.png" alt="NGI Pointer" id="id" class="class" height="65px" />
+<img src="/theme/img/eu.png" alt="NGI Pointer" id="id" class="class" height="65" />
 </center>
-<p><br/>
+<br/>
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme within the framework of the NGI-POINTER Project funded under grant agreement No 871528</p>
 <p><br/><br/><br/></p>
 <div class="post-index more-posts">

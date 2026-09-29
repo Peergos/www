@@ -162,24 +162,24 @@
     <h3 class="main-title">Published: Sun 16 August 2020</h3>
     <div class="bs-docs-section">
     <p>Peergos uses <a href="https://ipfs.tech">IPFS</a> to store its data and IPFS supports several kinds of blockstores, from various kinds of local disk based storage to an S3 based store. The S3 store is useful because it automatically provides redundancy and availability, and can also hold much more data than any disk. There are also many providers of S3 compatible storage now. For a while now, we've supported using the S3 based blockstore in Peergos. However this wasn't visible to end users, it was only a server side thing. This means that when uploading or downloading data it all had to go through the Peergos server.</p>
-<center>
-![Old data flow with S3](/theme/img/blog/proxied-s3-dataflow.png){#id .class width=200px width=50%}
+<p><center>
+<img src="/theme/img/blog/proxied-s3-dataflow.png" alt="Old data flow with S3" id="id" class="class" width="50%" />
 <br/>
 The flow of data in previous S3 usage, which proxied through the Peergos server
-</center>
+</center></p>
 <p>We have now implemented direct S3 access for reads and writes from the browser/client. Clients can read and write directly to an S3 bucket after authorization from the Peergos server. This new feature makes the Peergos server much more scalable and reliable. The typical bandwidth required of the Peergos server is reduced by ~100x.</p>
 <p>There are two modes of read operation; public and authorised. In public mode, all encrypted blocks can be read directly from S3 without any permission. This is the fastest, but may not suit your pricing model for S3. In authorised mode every read request has to first get permission from the peergos server, which signs a url that is temporarily authorised to read that object from S3. The client then directly downloads the block from S3. This is illustrated below.</p>
-<center>
-![Direct S3 reads](/theme/img/blog/direct-s3-reads.png){#id .class width=200px width=50%}
+<p><center>
+<img src="/theme/img/blog/direct-s3-reads.png" alt="Direct S3 reads" id="id" class="class" width="50%" />
 <br/>
 Direct S3 reads
-</center>
+</center></p>
 <p>This is all very well, but what about writes? What if there are many users on the same server? This is where it starts to get beautiful... All users on the same Peergos server share the same S3 bucket, and yet there is no possibility for conflict! This is because the blocks in S3 are content addressed! When a client wants to upload a block they first pre-authorise the block hash with the peergos server which returns a signed url the client can use to upload directly to S3. Upon upload, S3 automatically checks the sha256 hash and size of the block with what was signed. The data flow is shown below.</p>
-<center>
-![Direct S3 writes](/theme/img/blog/direct-s3-writes.png){#id .class width=200px width=50%}
+<p><center>
+<img src="/theme/img/blog/direct-s3-writes.png" alt="Direct S3 writes" id="id" class="class" width="50%" />
 <br/>
 Direct S3 writes
-</center>
+</center></p>
 <p>It should be clear how this takes most of the load off of the Peergos server, thus allowing a single server to handle many more users.</p>
 <p>The kind of functionality required for this isn't actually exposed by the official S3 SDK. So to get this working we had to implement our own version of the S3 client. It's remarkably simple and only took us a single class, without any dependencies except an hmac-sha256 implementation. The added benefit of this is that we've been able to remove the amazon S3 sdk entirely from our codebase, which was 60mb of dependencies! Compare this with the rest of Peergos including all dependencies, which add up to only 16mb.</p>
 <p>Want to be part of the future? Create an account on <a href="https://peergos.net/?signup=true">https://peergos.net</a> or self-host your own <a href="https://github.com/Peergos/Peergos/blob/master/README.md#usage---self-hosting">private personal datastore</a>.</p>
