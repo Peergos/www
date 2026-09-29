@@ -774,7 +774,8 @@ table.sees td:nth-child(3) {
     width: 100%;
 }
 
-.blog .bs-docs-section > p {
+.blog .bs-docs-section > p,
+.blog .bs-docs-section > center {
     max-width: 62ch;
     font-size: 1.12em;
 }
