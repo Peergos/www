@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -29,7 +29,7 @@
 
     <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
  </head>
-<body class="index" style="overflow-y: scroll;">
+<body class="index">
 <nav>
     <div class="nav-wrapper">
 
@@ -390,10 +390,10 @@
                       <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" class="icon-pad-16" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" class="icon-pad-14" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
                     <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
@@ -419,32 +419,8 @@
 </div>
 <script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
 <script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $(".button-collapse").sideNav();
-    });
+<script src="/theme/js/site.js" defer></script>
 
-
-</script>
-
-    <script>
-      // The tour is driven by the reader: no timer, and only the picture they
-      // asked for is fetched.
-      (function () {
-          var shot = document.getElementById("tour-shot");
-          var caption = document.getElementById("tour-caption");
-          var tabs = document.querySelectorAll(".tour-tab");
-          for (var i = 0; i < tabs.length; i++) {
-              tabs[i].addEventListener("click", function (e) {
-                  for (var j = 0; j < tabs.length; j++)
-                      tabs[j].classList.remove("is-active");
-                  e.currentTarget.classList.add("is-active");
-                  shot.srcset = e.currentTarget.dataset.srcset;
-                  shot.src = e.currentTarget.dataset.shot;
-                  caption.textContent = e.currentTarget.dataset.caption;
-              });
-          }
-      })();
-    </script>
+    <script src="/theme/js/tour.js" defer></script>
 </body>
 </html>

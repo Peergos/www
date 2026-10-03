@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -29,7 +29,7 @@
 
     <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
  </head>
-<body class="blog" style="overflow-y: scroll;">
+<body class="blog">
 <nav>
     <div class="nav-wrapper">
 
@@ -157,14 +157,14 @@
     <div class="row">
     <div class="col m3 col s4 toc-column">
     </div>
-    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8 content-column">
     <h1 class="page-header main-title">Fast Encrypted File Search</h1>
     <h3 class="main-title">Published: Tue 22 December 2020</h3>
     <div class="bs-docs-section">
     <p>A much requested feature in Peergos has been the ability to search your whole Peergos space for files. This is more difficult than it sounds in an end-to-end encrypted setting.</p>
 <p>A normal web app like, say, Facebook, would implement search by just sending the query to the server, which would then do the search for you, and return back the results. This is only possible because in websites like Facebook the server can read all your data. We don't have that luxury and so we had to take a different approach to search. First, let's see it in action.</p>
 <p><center></p>
-<video src="/theme/img/blog/search.mp4" style="width:90%" autoplay loop muted playsinline></video>
+<video src="/theme/img/blog/search.mp4" class="wide-video" autoplay loop muted playsinline></video>
 <p><br/>
 Search for files by name, type, size or modification time.
 </center></p>
@@ -212,7 +212,7 @@ This project has received funding from the European Union’s Horizon 2020 resea
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
-                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
+                                           href="#">Back to Top</a>
                                 </span>
 
     </div>
@@ -250,10 +250,10 @@ This project has received funding from the European Union’s Horizon 2020 resea
                       <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" class="icon-pad-16" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" class="icon-pad-14" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
                     <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
@@ -280,13 +280,7 @@ This project has received funding from the European Union’s Horizon 2020 resea
 </div>
 <script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
 <script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $(".button-collapse").sideNav();
-    });
-
-
-</script>
+<script src="/theme/js/site.js" defer></script>
 
 </body>
 </html>

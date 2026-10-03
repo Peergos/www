@@ -886,3 +886,37 @@ table.sees td:nth-child(3) {
 .closing p a {
     text-decoration: none;
 }
+
+body {
+    overflow-y: scroll;
+}
+
+.content-column {
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.icon-pad-16 {
+    padding: 16px;
+}
+
+.icon-pad-14 {
+    padding: 14px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.wide-video {
+    width: 90%;
+}
+
+.narrow-video {
+    width: 400px;
+    max-width: 100%;
+}
+
+.attribution {
+    text-align: right;
+}

@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -29,7 +29,7 @@
 
     <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
  </head>
-<body class="blog" style="overflow-y: scroll;">
+<body class="blog">
 <nav>
     <div class="nav-wrapper">
 
@@ -157,14 +157,14 @@
     <div class="row">
     <div class="col m3 col s4 toc-column">
     </div>
-    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8 content-column">
     <h1 class="page-header main-title">2025 - What a year!</h1>
     <h3 class="main-title">Published: Sat 27 December 2025</h3>
     <div class="bs-docs-section">
     <p>What a year.</p>
 <p>In 2025, we shipped 20 releases, more than double last year's 8 all with substantial features and fixes. We did this with an extremely small <a href="/about#team_">team</a> and along the way we tripled our number of paying customers.</p>
 <p>We don't have investors. We don't take Venture Capital. Peergos is a non-profit funded directly by the people who use it, customers and donations, which keeps us focused on building what users actually need. If you value a privacy-first, lock-in-free humane web, you can support our work by <a href="https://peergos.net/?signup=true">creating an account</a>.</p>
-<p><b style="fonstize:16">Version 1.0 and Major features</b><br/>
+<p><b>Version 1.0 and Major features</b><br/>
 This year marked a major milestone: Peergos 1.0<br/></p>
 <p>Alongside it, we shipped:</p>
 <ol>
@@ -176,7 +176,7 @@ This year marked a major milestone: Peergos 1.0<br/></p>
 <li>Massive performance improvements across the filesystem and p2p stack</li>
 </ol>
 <p>Let's hear more about each of these.</p>
-<p><b style="fonstize:16">Sync: Fast, secure and bandwidth-efficient</b><br/>
+<p><b>Sync: Fast, secure and bandwidth-efficient</b><br/>
 Our biggest new feature this year was the sync engine, now available in the desktop and Android apps. It lets you:</p>
 <ol>
 <li>Keep a local folder fully in sync with a folder in Peergos</li>
@@ -184,40 +184,40 @@ Our biggest new feature this year was the sync engine, now available in the desk
 <li>Choose whether deletes propagate (turning sync into a backup)</li>
 </ol>
 <p>It is efficient, so that if you have a big file synced and you modify a small section of it then it will only upload the modified chunk(s). To enable this and reduce bandwidth required in other situations we added some new encrypted metadata to files - a tree hash. For now this is a custom tree hash based on <a href="https://en.wikipedia.org/wiki/SHA-2">sha256</a>, in the future we will switch to <a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)#BLAKE3">blake3</a> once browser support is better. This tree hash allows us to efficiently determine if a local and remote file are the same and also to detect which chunks changed between two versions of a file.</p>
-<p><img style="width:100%;" src="/theme/img/blog/sync.png"/>
-<b style="fonstize:16">Security by design</b><br/>
+<p><img class="full-width" src="/theme/img/blog/sync.png"/>
+<b>Security by design</b><br/>
 The sync engine operates on a write capability limited to the synced folder. Even if a device is compromised, no other Peergos data is exposed.</p>
 <p>On Android, sync runs without the dangerous MANAGE_EXTERNAL_STORAGE permission. Instead, we use the modern Storage Access Framework, giving users fine-grained control without sacrificing full bi-directional sync of any file type.</p>
-<p><b style="fonstize:16">Native Desktop apps (no Java required)</b><br/>
+<p><b>Native Desktop apps (no Java required)</b><br/>
 We released native installers for Windows, macOS and Linux:</p>
 <p><a href="https://peergos.org/download">https://peergos.org/download</a></p>
 <p>This removes the need for Java and enables deeper system integration, including sync. It also improves the threat model: a compromised server cannot deliver a compromised client unlike a web app.</p>
 <p>Each platform had its own challenges: Windows CLI needing a separate binary, MacOS signing and notarization, Linux portability, but the result is a cleaner, safer and more capable desktop experience.</p>
-<p><b style="fonstize:16">Android</b><br/>
+<p><b>Android</b><br/>
 The Android app has been our most popular addition. You can <a href="https://peergos.org/download#android">install it</a> from Google play or side-loading. It supports the full user interface plus bi-directional sync. Next year we'll be integrating it with the native Android filesystem allowing you to send files directly between Peergos and other apps.</p>
-<p><b style="fonstize:16">Post quantum</b><br/>
+<p><b>Post quantum</b><br/>
 We've upgraded sharing in Peergos to use a hybrid key-exchange based on Curve25519 and <a href="https://en.wikipedia.org/wiki/Kyber">MLKEM-1024</a>. This means that anything you share in Peergos is safe against a <a href="https://en.wikipedia.org/wiki/Harvest_now%2C_decrypt_later"><em>harvest now, decrypt later</em></a> attack from a future large-scale quantum computer.</p>
-<p><b style="fonstize:16">50-150x Faster folder loading</b><br/>
+<p><b>50-150x Faster folder loading</b><br/>
 Previously, loading a folder in Peergos required listing all the child capabilities and then retrieving the metadata for each child before anything could be shown in the UI. We introduced a bulk champ.get call which allows us to retrieve up to 20 children in a single request. Then we added more metadata to the directory entries, specifically the mimetype, creation date and whether it is a directory. This means we can populate the UI as soon as we have listed the capabilities and update it with thumbnails and modification times asynchronously in the background. This last change made the UI about 100x faster on high latency connections. Now we can load a folder with 25,000 children from a server on another continent in 29s.</p>
 <p>We can still improve this further in the future by parallelising listing the directory capabilities, which currently need (number of children)/500 requests in series. By using the same <a href="/posts/fast-seeking">&quot;stream-secret&quot; technique</a> we use to enable zero I/O seeking within huge files we can make all those requests in parallel and thus only a single roundtrip to the server, regardless of directory size.</p>
-<p><b style="fonstize:16">Towards a CRDT</b><br/>
+<p><b>Towards a CRDT</b><br/>
 We now have automatic concurrent modification handling in most circumstances. Previously, if you uploaded a file whilst editing a totally unrelated file, then saving the changes would result in a concurrent modification exception from the server. Now we handle these automatically if there isn't a genuine conflict, i.e. a concurrent change to the same file or dir. In the future we will also handle non conflicting changes to the same dir. The plan for files is to support <a href="https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type">CRDT</a> formats like <a href="https://automerge.org/">automerge</a> which can automatically merge in concurrent changes.</p>
-<p><b style="fonstize:16">Shared page</b><br/>
+<p><b>Shared page</b><br/>
 There is a new shared page available in the left sidebar which shows all the things you have shared with others, making permissions and visibility much easier to manage.
-<img style="width:100%;" src="/theme/img/blog/shared-page.png"/></p>
-<p><b style="fonstize:16">Built-in migration and mirroring support</b><br/>
+<img class="full-width" src="/theme/img/blog/shared-page.png"/></p>
+<p><b>Built-in migration and mirroring support</b><br/>
 Peergos was designed from day one to avoid lock-in.</p>
 <p>Your identity, data and social graph are portable.</p>
 <p>This year we made it incredibly easy to mirror your data on another server or migrate to it. With a few clicks you can request or pay for space on another server to start mirroring your data or completely migrate there.</p>
-<p><b style="fonstize:16">Quic</b><br/>
+<p><b>Quic</b><br/>
 As part of a grant early in the year, we implemented the <a href="https://en.wikipedia.org/wiki/QUIC">quic</a> secure transport upstream in jvm-libp2p. This is now enabled in Peergos and improves reachability of nodes and also resolution and speed of the <a href="https://en.wikipedia.org/wiki/Distributed_hash_table">DHT</a>.</p>
-<p><b style="fonstize:16">P2P improvements</b><br/>
+<p><b>P2P improvements</b><br/>
 We fixed some bugs in the p2p http request implementation which makes them much more reliable now. We have also removed all usage of <a href="https://docs.ipfs.tech/concepts/bitswap/">bitswap</a> for retrieving blocks - we just use a standard p2p http request.</p>
-<p><b style="fonstize:16">Server-side scalability</b><br/>
+<p><b>Server-side scalability</b><br/>
 We've done a lot of work on speed and scalability of garbage collection on large blockstores. Now a garbage collection on a 10 TiB remote S3 blockstore can run in under an hour. We are currently working on another huge speed up to this by segregating the blockstore by user.</p>
-<p><b style="fonstize:16">The rest</b><br/>
+<p><b>The rest</b><br/>
 We've added translation for French, Spanish and Polish. There have also been lots of fixes, new mimetype support and CLI improvements.</p>
-<p><b style="fonstize:16">Looking ahead</b><br/>
+<p><b>Looking ahead</b><br/>
 2025 was about native apps, ecurity and performance.</p>
 <p>2026 will be about polish, usability, iOS and deeper OS integration, while staying true to our principles: privacy, portability and user control.</p>
 <p>If that resonates with you, <a href="https://peergos.net/?signup=true">create an account</a> or <a href="https://donorbox.org/peergos">support our work</a> and help shape what comes next.</p>
@@ -256,7 +256,7 @@ We've added translation for French, Spanish and Polish. There have also been lot
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
-                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
+                                           href="#">Back to Top</a>
                                 </span>
 
     </div>
@@ -294,10 +294,10 @@ We've added translation for French, Spanish and Polish. There have also been lot
                       <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" class="icon-pad-16" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" class="icon-pad-14" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
                     <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
@@ -324,13 +324,7 @@ We've added translation for French, Spanish and Polish. There have also been lot
 </div>
 <script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
 <script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $(".button-collapse").sideNav();
-    });
-
-
-</script>
+<script src="/theme/js/site.js" defer></script>
 
 </body>
 </html>

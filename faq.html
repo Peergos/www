@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -29,7 +29,7 @@
 
     <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
  </head>
-<body class="faq" style="overflow-y: scroll;">
+<body class="faq">
 <nav>
     <div class="nav-wrapper">
 
@@ -160,7 +160,7 @@
   <ul class='nav bs-docs-sidenav'><li class='active'><a href='#i_have_nothing_to_hide_so_why_should_i_care_about_privacy_' data-scroll data-url>I have nothing to hide, so why should I care about privacy?</a><li><a href='#ok_but_its_not_like_someone_is_watching_everything_i_do_right_' data-scroll data-url>OK, but it's not like someone is watching everything I do right?</a></li><li><a href='#isnt_staying_private_on_the_internet_hard_' data-scroll data-url>Isn't staying private on the internet hard?</a></li><li><a href='#if_privacy_is_a_right_why_do_i_have_to_pay_you_for_it_' data-scroll data-url>If privacy is a right, why do I have to pay you for it?</a></li><li><a href='#why_should_i_trust_peergos_over_my_current_storage_provider_' data-scroll data-url>Why should I trust Peergos over my current storage provider?</a></li><li><a href='#im_definitely_going_to_check_out_your_code_where_can_i_report_a_security_vulnerability_' data-scroll data-url>I'm definitely going to check out your code. Where can I report a security vulnerability?</a></li><li><a href='#can_my_company_use_peergos_' data-scroll data-url>Can my company use Peergos?</a></li></ul>
     </div>
     </div>
-    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8 content-column">
     <h1 class="page-header main-title">Frequently Asked Questions</h1>
     <div class="bs-docs-section">
     <h3 id="i_have_nothing_to_hide_so_why_should_i_care_about_privacy_">I have nothing to hide, so why should I care about privacy?</h3>
@@ -245,7 +245,7 @@
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
-                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
+                                           href="#">Back to Top</a>
                                 </span>
 
     </div>
@@ -283,10 +283,10 @@
                       <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" class="icon-pad-16" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" class="icon-pad-14" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
                     <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
@@ -313,13 +313,7 @@
 </div>
 <script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
 <script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $(".button-collapse").sideNav();
-    });
-
-
-</script>
+<script src="/theme/js/site.js" defer></script>
 
 </body>
 </html>

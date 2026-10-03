@@ -17,7 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@peergos">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src https: 'self'; style-src 'unsafe-inline' 'self'; script-src 'unsafe-inline' 'unsafe-eval' 'self'; font-src 'self' data:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; font-src 'self' data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -29,7 +29,7 @@
 
     <link rel="alternate" href="https://peergos.org/feeds/posts.atom.xml" type="application/atom+xml">
  </head>
-<body class="blog" style="overflow-y: scroll;">
+<body class="blog">
 <nav>
     <div class="nav-wrapper">
 
@@ -157,7 +157,7 @@
     <div class="row">
     <div class="col m3 col s4 toc-column">
     </div>
-    <div class="col m9 col s8" style="overflow-x:auto; padding-bottom: 10px;">
+    <div class="col m9 col s8 content-column">
     <h1 class="page-header main-title">Simple decentralized web hosting on Peergos</h1>
     <h3 class="main-title">Published: Mon 01 March 2021</h3>
     <div class="bs-docs-section">
@@ -173,13 +173,13 @@ Go to your profile, set that directory as your website and click publish.
 </ol>
 <p>Your personal website will now be available at <tt>https://&lt;your-user-name&gt;.peergos.me</tt>. It doesn't get any simpler than that. Let's see this in action!</p>
 <p><center></p>
-<video src="/theme/img/blog/p2p-webhosting.mp4" style="width:90%" autoplay loop muted playsinline></video>
+<video src="/theme/img/blog/p2p-webhosting.mp4" class="wide-video" autoplay loop muted playsinline></video>
 <p><br/>
 Host your decentralized website directly from Peergos.
 </center></p>
 <p>Any changes made to your website files are automatically and instantly reflected in your website. When we say instantaneous, we mean it. Check it out below!</p>
 <p><center></p>
-<video src="/theme/img/blog/p2p-web-update.mp4" style="width:90%" autoplay loop muted playsinline></video>
+<video src="/theme/img/blog/p2p-web-update.mp4" class="wide-video" autoplay loop muted playsinline></video>
 <p><br/>
 Instantaneous and free updates to your decentralized website.
 </center></p>
@@ -230,7 +230,7 @@ This project has received funding from the European Union’s Horizon 2020 resea
     </div>
     <span class="pull-right">
                                         <a class="btn btn-default" role="button"
-                                           href="javascript:window.scrollTo(0,0);">Back to Top</a>
+                                           href="#">Back to Top</a>
                                 </span>
 
     </div>
@@ -268,10 +268,10 @@ This project has received funding from the European Union’s Horizon 2020 resea
                       <img src="/theme/img/contact/matrix.png" width="100" height="100" alt="The Peergos Matrix room">
                     </a></li>
                     <li><a href="https://mastodon.social/@peergos" rel="me" target="_new">
-                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" style="padding:16px;" alt="Peergos on Mastodon">
+                    <img src="/theme/img/contact/mastodon.svg" width="100" height="100" class="icon-pad-16" alt="Peergos on Mastodon">
                     </a></li>
                     <li><a href="https://bsky.app/profile/peergos.org" target="_new">
-                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" style="padding:14px;" alt="Peergos on Bluesky">
+                    <img src="/theme/img/contact/bluesky.svg" width="100" height="100" class="icon-pad-14" alt="Peergos on Bluesky">
                     </a></li>
                     <li><a href="https://twitter.com/peergos" target="_new">
                     <img src="/theme/img/contact/twitter.svg" width="100" height="100" alt="Peergos on Twitter">
@@ -298,13 +298,7 @@ This project has received funding from the European Union’s Horizon 2020 resea
 </div>
 <script src="/theme/vendor/jquery/dist/jquery.min.js" defer></script>
 <script src="/theme/vendor/materialize/js/materialize.min.js" defer></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        $(".button-collapse").sideNav();
-    });
-
-
-</script>
+<script src="/theme/js/site.js" defer></script>
 
 </body>
 </html>
