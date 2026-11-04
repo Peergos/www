@@ -1,0 +1,4 @@
+Contact: mailto:peergos@peergos.org
+Expires: 2027-11-01T00:00:00Z
+Preferred-Languages: en
+Canonical: https://peergos.org/.well-known/security.txt
